@@ -68,9 +68,9 @@ F = """      /$$$$$$            /$$              /$$    /$$                 /$$ 
 frames = [A, B, C, D, E, F]
 def introanimate(frames, delay):
     try:
-          for _ in range(2):
+          for _ in range(3):
             for frame in frames:
-                os.system('cls' if os.name == 'nt' else clear)
+                os.system('cls' if os.name == 'nt' else 'clear')
                 print(frame)
                 time.sleep(delay)
     except KeyboardInterrupt:
