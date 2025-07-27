@@ -1,6 +1,7 @@
 import time
-import sys
 import os
+import pygame
+
 A = """  /$$$$$$            /$$              /$$    /$$                 /$$ /$$
  /$$__  $$          |__/            /$$$$$$ | $$                | $$| $$
 | $$  \__/  /$$$$$$  /$$ /$$$$$$$  /$$__  $$| $$$$$$$   /$$$$$$ | $$| $$
@@ -67,12 +68,21 @@ F = """      /$$$$$$            /$$              /$$    /$$                 /$$ 
                                        \__/"""
 frames = [A, B, C, D, E, F]
 def introanimate(frames, delay):
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load("SFX.mp3")
+    pygame.mixer.music.play()
     try:
+
           for _ in range(3):
             for frame in frames:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print(frame)
                 time.sleep(delay)
+         
     except KeyboardInterrupt:
         print('loser')
-introanimate(frames, delay=0.07)
+        pygame.mixer.music.stop()
+
+
+introanimate(frames, delay=0.05)
