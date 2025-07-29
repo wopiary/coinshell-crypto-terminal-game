@@ -33,7 +33,7 @@ def commands():
     Enter command: """).strip().lower()
 
         if user_command == 'q':
-            result = q_command.starting_message()
+            result = q_command.game()
 
         elif user_command == 'h':
             result = h_command.show_help()  # show help and wait for user to go back
