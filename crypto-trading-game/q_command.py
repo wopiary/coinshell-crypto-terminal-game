@@ -70,34 +70,33 @@ def starting_message():
                                                                                     Here's what you need to know:
 
                                                                                     💵 Starting Balance: $10,000
-                                                                                    💹 Market is LIVE and volatile
-                                                                                    ⌚ Every second counts in crypto!
+                                                                                   💹 Market is LIVE and volatile
+                                                                                  ⌚ Every second counts in crypto!
 
-                                                                        Trade smart, trade fast, and may the profits be with you!"""
+                                                                       Trade smart, trade fast, and may the profits be with you!"""
     )
         
-    while True:
-            choice = input("\n(c) Continue game | (b) Back to main menu: ").strip().lower()
-            if choice == 'b':
-                break
-            elif choice == 'c':
-                coin_selection()  
-            else:
-                print("Invalid choice. Try again.")
+    time.sleep(3)
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def game():
         starting_message()
         print("Loading market data...")
     
-        # Simulate loading
-        for i in range(3):
-            print(".", end="", flush=True)
-            time.sleep(0.5)
+        spinner = '-\\|/'
+        for i in range(100):  # your actual loop
+        # your code here
+                time.sleep(0.1)  # simulate work
+                
+                # Progress line - just add this:
+                print(f'\r{spinner[i % 4]} Processing... {i+1}%', end='')
     
-        print("\n\nMarket loaded! Let's start trading!")
-    
+        print("\n\nMarket loaded! Let's start gambl- trading I mean!")
+        os.system('cls' if os.name == 'nt' else 'clear')
+
         while True:
                 choice = input("""
-                        ()         
+
+        (v) 📊 To view portfolio |                          
 
 """)
