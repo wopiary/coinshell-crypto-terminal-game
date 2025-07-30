@@ -8,16 +8,17 @@ def intro():
     os.system('cls' if os.name == 'nt' else 'clear')
 
     frames = [
-            intro_module.A,
-            intro_module.B,
-            intro_module.C,
-            intro_module.D,
-            intro_module.E,
-            intro_module.F,
-        ]
-    
-    delay = 0.09
-    intro_module.introanimate(frames, delay)
+        intro_module.A,
+        intro_module.B,
+        intro_module.C,
+        intro_module.D,
+        intro_module.E,
+        intro_module.F
+
+
+    ]
+    frames
+    intro_module.introanimate(frames, delay=0.02)
     
 def commands():
     while True:
@@ -36,7 +37,7 @@ def commands():
             result = q_command.game()
 
         elif user_command == 'h':
-            result = h_command.show_help()  # show help and wait for user to go back
+            result = h_command.show_help() 
             
 
         elif user_command == 'e':
