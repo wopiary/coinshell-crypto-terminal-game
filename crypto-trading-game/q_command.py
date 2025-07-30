@@ -1,9 +1,13 @@
 import os
 import time
 import sys
-import bytebucks
 import random
 import threading
+
+
+        
+
+
 def coin_selection():
     
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -15,11 +19,11 @@ def coin_selection():
 
                      Current Coin Prices:
           
- (1) {coin_names[0]}   ==   ${coins_prices[0]: .5f}
- (2) {coin_names[1]}   ==   ${coins_prices[1]: .5f}
- (3) {coin_names[2]}   ==   ${coins_prices[2]: .5f}
- (4) {coin_names[3]}   ==   ${coins_prices[3]: .5f}
- (5) {coin_names[4]}   ==   ${coins_prices[4]: .5f}
+ (1) {coin_names[0]}   ||   ${coins_prices[0]: .5f}
+ (2) {coin_names[1]}   ||   ${coins_prices[1]: .5f}
+ (3) {coin_names[2]}   ||   ${coins_prices[2]: .5f}
+ (4) {coin_names[3]}   ||   ${coins_prices[3]: .5f}
+ (5) {coin_names[4]}   ||   ${coins_prices[4]: .5f}
    """)
     while True:
         user_coin_choice = input("Selection one coin, enter number to buy >> ")
@@ -43,8 +47,8 @@ def coin_selection():
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print('OpalX Purchased')
         else:
-                    print("Selected Coin is Unavailable!")
-         
+                print("Selected Coin is Unavailable!")
+        
 
 
 def starting_message():
@@ -77,7 +81,7 @@ def starting_message():
     print("Loading market data...")
     
     spinner = '-\\|/'
-    for i in range(100):
+    for i in range(1): #CHANGE THIS SHIT BACK TO 100
                 time.sleep(0.1)  
                 
                 
@@ -86,17 +90,132 @@ def starting_message():
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear')
 
-current_news = ['']
-def update_news():
-        fake_news = [
-        "A coin pumped 400% after a dog walked across a keyboard and hit 'BUY'.",
+
+
+
+def game():
+        
+        starting_message()
+        
+        user_balance = 5000
+        
+        while True:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                
+                print('• Market LIVE!\n')
+                print(f'{random.choice([        """
+$1200 ┤                                    ╭─╮
+$1150 ┤                               ╭────╯  ╰╮
+$1100 ┤                          ╭────╯        ╰╮
+$1050 ┤                     ╭────╯              ╰─╮
+$1000 ┤                ╭────╯                    ╰╮
+$ 950 ┤           ╭────╯                          ╰─╮
+$ 900 ┤      ╭────╯                                ╰╮
+$ 850 ┤ ╭────╯                                      ╰──
+$ 800 ┴─╯                                              
+      12PM   1PM   2PM   3PM   4PM   5PM   6PM   7PM""",
+
+
+        """
+$1200 ┤╭─╮                                      
+$1150 ┤╯  ╰╮                                     
+$1100 ┤    ╰╮                ╭─╮                 
+$1050 ┤     ╰─╮         ╭────╯  ╰╮               
+$1000 ┤       ╰╮   ╭────╯        ╰╮              
+$ 950 ┤        ╰─╮╱╯              ╰─╮            
+$ 900 ┤          ╰╯                 ╰╮           
+$ 850 ┤                              ╰─╮        
+$ 800 ┴─                               ╰────────
+      12PM   1PM   2PM   3PM   4PM   5PM   6PM   7PM""",
+
+
+        """
+$1200 ┤    ╭─╮              ╭─╮              
+$1150 ┤   ╱   ╰╮        ╭────╯  ╰╮             
+$1100 ┤  ╱     ╰╮  ╭────╯        ╰╮            
+$1050 ┤ ╱       ╰─╱╯              ╰─╮          
+$1000 ┤╱                            ╰╮         
+$ 950 ┤                              ╰─╮       
+$ 900 ┤                                ╰╮      
+$ 850 ┤                                 ╰─╮    
+$ 800 ┴─                                  ╰────
+      12PM   1PM   2PM   3PM   4PM   5PM   6PM   7PM""",
+
+
+        """
+$1200 ┤         ╭─╮     ╭─╮               
+$1150 ┤    ╭────╯  ╰╮   ╱   ╰╮              
+$1100 ┤   ╱         ╰╮ ╱     ╰╮             
+$1050 ┤  ╱           ╰╱       ╰─╮           
+$1000 ┤ ╱                      ╰╮          
+$ 950 ┤╱                        ╰─╮        
+$ 900 ┤                           ╰╮       
+$ 850 ┤                            ╰─╮     
+$ 800 ┴─                             ╰─────
+      12PM   1PM   2PM   3PM   4PM   5PM   6PM   7PM""",
+
+
+        """
+$1200 ┤           ╭╮                      
+$1150 ┤          ╱  ╲                     
+$1100 ┤         ╱    ╲                    
+$1050 ┤        ╱      ╲                   
+$1000 ┤   ╭───╱        ╲                  
+$ 950 ┤  ╱             ╲                 
+$ 900 ┤ ╱               ╲╲               
+$ 850 ┤╱                 ╲╲              
+$ 800 ┴─                  ╲╲─────────────
+      12PM   1PM   2PM   3PM   4PM   5PM   6PM   7PM""",
+
+
+        """
+$1200 ┤                          ╭──────╮
+$1150 ┤                     ╭────╯       ╰╮
+$1100 ┤                ╭────╯             ╰╮
+$1050 ┤           ╭────╯                   ╰─╮
+$1000 ┤      ╭────╯                         ╰╮
+$ 950 ┤ ╭────╯                              ╰─╮
+$ 900 ┤╱╯                                    ╰╮
+$ 850 ┤                                       ╰─╮
+$ 800 ┴─                                        ╰──
+      12PM   1PM   2PM   3PM   4PM   5PM   6PM   7PM""",
+
+
+        """
+$1200 ┤╭╮                                  
+$1150 ┤╯ ╲                                 
+$1100 ┤   ╲                                
+$1050 ┤    ╲                               
+$1000 ┤     ╲                              
+$ 950 ┤      ╲                             
+$ 900 ┤       ╲                            
+$ 850 ┤        ╲╲                          
+$ 800 ┴─        ╲╲─────────────────────────
+      12PM   1PM   2PM   3PM   4PM   5PM   6PM   7PM""",
+
+ 
+        """
+	    ╭─╮          ╭─╮              
+$1150 ┤   ╱   ╰╮    ╭───╯  ╰╮             
+$1100 ┤  ╱     ╰╮  ╱        ╰╮            
+$1050 ┤ ╱       ╰─╱          ╰─╮          
+$1000 ┤╱                      ╰╮         
+$ 950 ┤                        ╰─╮       
+$ 900 ┤                          ╰╮      
+$ 850 ┤                           ╰─╮    
+$ 800 ┴─                            ╰────
+      12PM   1PM   2PM   3PM   4PM   5PM   6PM   7PM"""])}')
+                print()
+                print()
+                print(f'💰 Wallet Balance: {user_balance}')
+                print(f'📰 News: {random.choice([
         "A trader mistook a rugpull for a feature.",
         "A DAO member explained tokenomics using emojis only.",
         "A trader sent all the ETH to a food delivery app.",
         "The CEO tried to stake coins on a microwave.",
         "A guy sold all his tokens to buy one of those chairs that folds into a cube.",
         "The CEO of a crypto startup turned out to be a Roomba with a Twitter account.",
-        "A DAO voted to buy a Lambo, but it got repo’d before delivery.",
+        "A DAO voted to buy a Lambo, but it got repo'd before delivery.",
         "The CFO of a DeFi project accidentally sent $3 million to his mom.",
         "The CFO announced the whitepaper as an NFT poem.",
         "The intern left the project to become a DJ.",
@@ -189,24 +308,10 @@ def update_news():
         "The lead dev’s resignation letter was just the word 'bruh'.",
         "The founder used the company laptop to mine Dogecoin and cook ramen.",
         "The official Discord got taken over by a cat walking on the keyboard."
-        ]       
-
-        while True:
-                current_news[0] = random.choice(fake_news)
-                
-
-
-def game():
-        starting_message()
         
-        user_balance = 5000
-        
-        threading.Thread(target=update_news, daemon=True).start()
-
-        while True:
-                os.system('cls' if os.name == 'nt' else 'clear')
-                print(f'💰 Wallet Balance: {user_balance}')
-                print(f'📰 News: {current_news}')
+    ]
+        )}')
+                        
 
 
                 user_dashboard_choice = input("""(v) 📊 View portfolio  |  (m) 📈 View market  |  (r) 🪙 Purchase/sell coins  |  (e) 🚪 Exit                       
