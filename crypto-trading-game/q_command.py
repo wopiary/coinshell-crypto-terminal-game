@@ -5,7 +5,33 @@ import random
 import threading
 import fake_news
 import line_graph
-        
+# import user_credentials
+
+Name = None
+
+def message(text, delay):
+    os.system('cls' if os.name=='nt' else 'clear')
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+ceo_message = """
+           ⢀⠤⠐⠲⣦⠀⠀⠀⠐⡍⠥⠂⠀⠀⠀ Thorne:   ⠀⠀⠀⠀⠀              Alright, listen up. The name's Thorne. CEO of this whole damn operation. You're stepping into the arena now, kid,
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣦⡀⠠⠛⣧⡀⣀⠐⢑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀                       and in this game of crypto, where fortunes are made and lost faster than a blink, you gotta know who's on your side
+⠀⠀⠀⠀⢀⡄⠀⠀⠈⠣⡻⣿⠦⠐⠒⠚⠉⠣⠀⠀⠁⢕⢄⠀⠀⠀⠀⠀⠀⠀                       More importantly,you gotta know who you're dealing with. Every transaction, every trade, every whisper of a coin's 
+⠀⡠⡔⠒⠃⢣⢀⣀⠀⢠⢊⠆⠁⠀⠀⠀⢀⠀⠁⠀⠀⠀⠊⡘⠀⠀⠀⠀⠀⠀                       rise or fall... it all comes down to trust. Or the lack thereof.
+⢆⠠⠤⠀⠠⣦⣿⣿⣿⣾⣾⣁⡀⣀⡠⠀⢈⣈⡉⠃⠀⢠⡢⣚⡮⢖⢄⠀⠀⠀                       So, before we dive headfirst into this digital gold rush, let's get one thing straight.
+⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⡮⠔⣂⠡⣬⣤⣤⣴⣿⣿⣾⠁⠀⠙⢕⣄⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """
+
+    
+def user_creds():
+    global Name
+    user_name = input("""       
+                                                      What's your name, hotshot? """).strip().capitalize()
+    Name = user_name
+    return Name
 
 
 def coin_selection():
@@ -74,8 +100,12 @@ def starting_message():
 
                                                                        Trade smart, trade fast, and may the profits be with you!"""
     )
-        
-    
+    time.sleep(2)
+    message(ceo_message, delay=0.01)
+    time.sleep(2)
+    Name = user_creds()
+    time.sleep(0.5)
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("Loading market data...")
     
     spinner = '-\\|/'
@@ -94,15 +124,15 @@ def starting_message():
 def game():
         
         starting_message()
-        
+
         user_balance = 5000
-        
+
         while True:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 
                 print('• Market is OPEN!\n')
                 line_graph.line_graphs()
-
+                print(f'👤: {Name}')
                 print(f'💰 Wallet Balance: {user_balance}')
                 fake_news.fake_news()
         
