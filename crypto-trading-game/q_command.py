@@ -7,7 +7,13 @@ import fake_news
 import line_graph
 # import user_credentials
 
+
+user_wallet = {
+       'balance': 5000.00000
+}
+
 Name = None
+
 
 def message(text, delay):
     os.system('cls' if os.name=='nt' else 'clear')
@@ -16,15 +22,17 @@ def message(text, delay):
         sys.stdout.flush()
         time.sleep(delay)
     print()
+# ceo_message = """
+#            ⢀⠤⠐⠲⣦⠀⠀⠀⠐⡍⠥⠂⠀⠀⠀ Thorne:   ⠀⠀⠀⠀⠀              Alright, listen up. The name's Thorne. CEO of this whole damn operation. You're stepping into the arena now, kid,
+# ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣦⡀⠠⠛⣧⡀⣀⠐⢑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀                       and in this game of crypto, where fortunes are made and lost faster than a blink, you gotta know who's on your side.
+# ⠀⠀⠀⠀⢀⡄⠀⠀⠈⠣⡻⣿⠦⠐⠒⠚⠉⠣⠀⠀⠁⢕⢄⠀⠀⠀⠀⠀⠀⠀                       More importantly, you gotta know who you're dealing with. Every transaction, every trade, every whisper of a coin's 
+# ⠀⡠⡔⠒⠃⢣⢀⣀⠀⢠⢊⠆⠁⠀⠀⠀⢀⠀⠁⠀⠀⠀⠊⡘⠀⠀⠀⠀⠀⠀                       rise or fall... it all comes down to trust. Or the lack thereof.
+# ⢆⠠⠤⠀⠠⣦⣿⣿⣿⣾⣾⣁⡀⣀⡠⠀⢈⣈⡉⠃⠀⢠⡢⣚⡮⢖⢄⠀⠀⠀                       So, before we dive headfirst into this digital gold rush, let's get one thing straight.
+# ⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⡮⠔⣂⠡⣬⣤⣤⣴⣿⣿⣾⠁⠀⠙⢕⣄⠀
+# ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """ replace with this after you done
 ceo_message = """
-           ⢀⠤⠐⠲⣦⠀⠀⠀⠐⡍⠥⠂⠀⠀⠀ Thorne:   ⠀⠀⠀⠀⠀              Alright, listen up. The name's Thorne. CEO of this whole damn operation. You're stepping into the arena now, kid,
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣦⡀⠠⠛⣧⡀⣀⠐⢑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀                       and in this game of crypto, where fortunes are made and lost faster than a blink, you gotta know who's on your side
-⠀⠀⠀⠀⢀⡄⠀⠀⠈⠣⡻⣿⠦⠐⠒⠚⠉⠣⠀⠀⠁⢕⢄⠀⠀⠀⠀⠀⠀⠀                       More importantly,you gotta know who you're dealing with. Every transaction, every trade, every whisper of a coin's 
-⠀⡠⡔⠒⠃⢣⢀⣀⠀⢠⢊⠆⠁⠀⠀⠀⢀⠀⠁⠀⠀⠀⠊⡘⠀⠀⠀⠀⠀⠀                       rise or fall... it all comes down to trust. Or the lack thereof.
-⢆⠠⠤⠀⠠⣦⣿⣿⣿⣾⣾⣁⡀⣀⡠⠀⢈⣈⡉⠃⠀⢠⡢⣚⡮⢖⢄⠀⠀⠀                       So, before we dive headfirst into this digital gold rush, let's get one thing straight.
-⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⡮⠔⣂⠡⣬⣤⣤⣴⣿⣿⣾⠁⠀⠙⢕⣄⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """
-
+           test
+        """
     
 def user_creds():
     global Name
@@ -35,7 +43,8 @@ def user_creds():
 
 
 def coin_selection():
-    
+#     Balance = balance()
+    global user_wallet
     os.system('cls' if os.name == 'nt' else 'clear')
     time.sleep(1)
     coin_names = ['ByteBucks(BYB)', 'LunaMint(LMT)', 'Vironix(VRX)', 'HexaFuel(HXF)', 'OpalX(OPX)']
@@ -50,6 +59,7 @@ def coin_selection():
  (3) {coin_names[2]}   ||   ${coins_prices[2]: .5f}
  (4) {coin_names[3]}   ||   ${coins_prices[3]: .5f}
  (5) {coin_names[4]}   ||   ${coins_prices[4]: .5f}
+ press 6 to go back
    """)
     while True:
         user_coin_choice = input("Selection one coin, enter number to buy >> ")
@@ -57,12 +67,15 @@ def coin_selection():
         
         if user_coin_choice == '1':
                 
+                
+                user_wallet['balance']-= coins_prices[0]
                 print('ByteBucks Purchased')
+                print(f"New Balance: ${user_wallet['balance']:.2f}")
                 time.sleep(0.8)
-                coin_selection()
+
         elif user_coin_choice == '2':
-                os.system('cls' if os.name == 'nt' else 'clear')
                 print('LunaMint Purchased')
+
         elif user_coin_choice == '3':
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print('Vironix Purchased')
@@ -72,6 +85,8 @@ def coin_selection():
         elif user_coin_choice == '5':
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print('OpalX Purchased')
+        elif user_coin_choice == '6':
+               return 'back'
         else:
                 print("Selected Coin is Unavailable!")
         
@@ -94,7 +109,7 @@ def starting_message():
                                                                           Ready to dive into the wild world of crypto trading?
                                                                                     Here's what you need to know:
 
-                                                                                    💵 Starting Balance: $10,000
+                                                                                    💵 Starting Balance: $5,000
                                                                                    💹 Market is LIVE and volatile
                                                                                   ⌚ Every second counts in crypto!
 
@@ -102,14 +117,14 @@ def starting_message():
     )
     time.sleep(2)
     message(ceo_message, delay=0.01)
-    time.sleep(2)
+    time.sleep(1)
     Name = user_creds()
     time.sleep(0.5)
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Loading market data...")
     
     spinner = '-\\|/'
-    for i in range(100): #CHANGE THIS SHIT BACK TO 100
+    for i in range(3): #CHANGE THIS SHIT BACK TO 100
                 time.sleep(0.1)  
                 
                 
@@ -125,15 +140,15 @@ def game():
         
         starting_message()
 
-        user_balance = 5000
+
 
         while True:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 
                 print('• Market is OPEN!\n')
                 line_graph.line_graphs()
-                print(f'👤: {Name}')
-                print(f'💰 Wallet Balance: {user_balance}')
+                print(f'\n👤: {Name}')
+                print(f'💰 Wallet Balance: {user_wallet['balance']}')
                 fake_news.fake_news()
         
                         
