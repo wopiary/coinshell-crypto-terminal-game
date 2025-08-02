@@ -30,9 +30,9 @@ def quick_scene(text, delay):
 # ⠀⡠⡔⠒⠃⢣⢀⣀⠀⢠⢊⠆⠁⠀⠀⠀⢀⠀⠁⠀⠀⠀⠊⡘⠀⠀⠀⠀⠀⠀                       rise or fall... it all comes down to trust. Or the lack thereof.
 # ⢆⠠⠤⠀⠠⣦⣿⣿⣿⣾⣾⣁⡀⣀⡠⠀⢈⣈⡉⠃⠀⢠⡢⣚⡮⢖⢄⠀⠀⠀                       So, before we dive headfirst into this digital gold rush, let's get one thing straight.
 # ⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⡮⠔⣂⠡⣬⣤⣤⣴⣿⣿⣾⠁⠀⠙⢕⣄⠀
-# ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """ delete the following ceo_message, replace with this after you done
+# ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """ #delete the following ceo_message, replace with this after you done
 ceo_message = """
-           test
+           yr
         """
 
 
@@ -44,7 +44,11 @@ def users_name_info():
     Name = user_name
     return Name
 
-
+# def coins_page_buy_command():
+#        os.system('cls' if os.name == 'nt' else 'clear')
+#        print("""
+# -----PURCHASE PROTOCOL----
+# """)
 
 def coins_page():
     global user_wallet
@@ -53,52 +57,88 @@ def coins_page():
     coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)', '|🧬| GeneX(GNX)', '|🔮| Oracle(ORC)', '|🔑| KeyStone(KST)', '|🧊| CryoChain(CRC)']
     coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
     
-    print(f""" 
-        • GLOBAL MARKET 
-|TICKET|       |COIN|              |VALUE|          
- (1)    {coin_names[0]}   ||   ${coin_prices[0]: .5f}             
- (2)    {coin_names[1]}    ||   ${coin_prices[1]: .5f}               
- (3)    {coin_names[2]}     ||   ${coin_prices[2]: .5f}              
- (4)    {coin_names[3]}    ||   ${coin_prices[3]: .5f}             
- (5)    {coin_names[4]}       ||   ${coin_prices[4]: .5f}            
- (6)    {coin_names[5]}  ||   ${coin_prices[5]: .5f}             
- (7)    {coin_names[6]}      ||   ${coin_prices[6]: .5f}            
- (8)    {coin_names[7]}     ||   ${coin_prices[7]: .5f} 
- (9)    {coin_names[8]}      ||   ${coin_prices[8]: .5f}
- (10)   {coin_names[9]}    ||   ${coin_prices[9]: .5f}
- (11)   {coin_names[10]}       ||   ${coin_prices[10]: .5f}
- (12)   {coin_names[11]}      ||   ${coin_prices[11]: .5f}
- (13)   {coin_names[12]}    ||   ${coin_prices[12]: .5f}
- (14)   {coin_names[13]}   ||   ${coin_prices[13]: .5f}
+#     print(f""" • MARKET BOARD!\n
+#                       |COIN|               |VALUE|          
+#         (1)    {coin_names[0]}   ||   ${coin_prices[0]: .5f}             
+#         (2)    {coin_names[1]}    ||   ${coin_prices[1]: .5f}               
+#         (3)    {coin_names[2]}     ||   ${coin_prices[2]: .5f}              
+#         (4)    {coin_names[3]}    ||   ${coin_prices[3]: .5f}             
+#         (5)    {coin_names[4]}       ||   ${coin_prices[4]: .5f}            
+#         (6)    {coin_names[5]}  ||   ${coin_prices[5]: .5f}             
+#         (7)    {coin_names[6]}      ||   ${coin_prices[6]: .5f}            
+#         (8)    {coin_names[7]}     ||   ${coin_prices[7]: .5f} 
+#         (9)    {coin_names[8]}      ||   ${coin_prices[8]: .5f}
+#         (10)   {coin_names[9]}    ||   ${coin_prices[9]: .5f}
 
- press 6 to go back
-   """)
+
+#    """)
+    print(f"""• Market Board
+                 #  | COIN NAME                | VALUE ($)      
+          ----------|--------------------------|----------------
+                (1) | {coin_names[0]}      | ${coin_prices[0]:.5f}
+          ----------|--------------------------|----------------
+                (2) | {coin_names[1]}       | ${coin_prices[1]:.5f}
+          ----------|--------------------------|----------------
+                (3) | {coin_names[2]}        | ${coin_prices[2]:.5f}
+          ----------|--------------------------|----------------
+                (4) | {coin_names[3]}       | ${coin_prices[3]:.5f}
+          ----------|--------------------------|----------------
+                (5) | {coin_names[4]}          | ${coin_prices[4]:.5f}
+          ----------|--------------------------|----------------
+                (6) | {coin_names[5]}     | ${coin_prices[5]:.5f}
+          ----------|--------------------------|----------------
+                (7) | {coin_names[6]}         | ${coin_prices[6]:.5f}
+          ----------|--------------------------|----------------
+                (8) | {coin_names[7]}        | ${coin_prices[7]:.5f}
+          ----------|--------------------------|----------------
+                (9) | {coin_names[8]}         | ${coin_prices[8]:.5f}
+          ----------|--------------------------|----------------
+                (10)| {coin_names[9]}       | ${coin_prices[9]:.5f}
+""")
     while True:
-        chosen_coin_to_interact = input("Selection one coin, enter number to buy >> ")
+        
+        coins_page_dashboard_choice = input(
+"""(b) 🟢 Buy  |  🔴 (s) Sell  |  🚪 (e) Return to Home
+""")
      
         
-        if chosen_coin_to_interact == '1':
-                user_wallet['balance'] -= coin_prices[0]
-                print('ByteBucks Purchased')
-                print(f"New Balance: ${user_wallet['balance']:.2f}")
-                time.sleep(0.8)
-
-        elif chosen_coin_to_interact == '2':
-                print('LunaMint Purchased')
-
-        elif chosen_coin_to_interact == '3':
-                os.system('cls' if os.name == 'nt' else 'clear')
-                print('Vironix Purchased')
-        elif chosen_coin_to_interact == '4':
-                os.system('cls' if os.name == 'nt' else 'clear')
-                print('HexaFuel Purchased')
-        elif chosen_coin_to_interact == '5':
-                os.system('cls' if os.name == 'nt' else 'clear')
-                print('OpalX Purchased')
-        elif chosen_coin_to_interact == '6':
-               print('TerraGreen Purchased')
+        if coins_page_dashboard_choice == 'b':
+                print('buy')
+        elif coins_page_dashboard_choice == 's':
+               print('sell')
+        elif coins_page_dashboard_choice == 'e':
+               return 'back'
         else:
-                print("Selected Coin is Unavailable!")
+               print('Command Unavailable!')
+        
+
+#     while True:
+        
+#         chosen_coin_to_interact = input("Selection one coin, enter number to buy >> ")
+     
+        
+#         if chosen_coin_to_interact == '1':
+#                 user_wallet['balance'] -= coin_prices[0]
+#                 print('ByteBucks Purchased')
+#                 print(f"New Balance: ${user_wallet['balance']:.2f}")
+#                 time.sleep(0.8)
+
+#         elif chosen_coin_to_interact == '2':
+#                 print('LunaMint Purchased')
+
+#         elif chosen_coin_to_interact == '3':
+#                 os.system('cls' if os.name == 'nt' else 'clear')
+#                 print('Vironix Purchased')
+#         elif chosen_coin_to_interact == '4':
+#                 os.system('cls' if os.name == 'nt' else 'clear')
+#                 print('HexaFuel Purchased')
+#         elif chosen_coin_to_interact == '5':
+#                 os.system('cls' if os.name == 'nt' else 'clear')
+#                 print('OpalX Purchased')
+#         elif chosen_coin_to_interact == '11':
+#                return 'back'
+#         else:
+#                 print("Selected Coin is Unavailable!")
         
 
 
@@ -134,7 +174,7 @@ def starting_message():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Loading market data...")
     spinner = '-\\|/'
-    for i in range(3): #CHANGE THIS SHIT BACK TO 100
+    for i in range(2): #CHANGE THIS SHIT BACK TO 100
                 time.sleep(0.1)  
                 
                 
