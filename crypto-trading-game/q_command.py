@@ -12,7 +12,7 @@ user_wallet = {
        'balance': 5000.00000
 }
 Name = None
-
+coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
 
 
 #QUICKSCENE, THORNE NTRODUCES HIMSELF TO THE PLAYER AND ASK FOR NAME
@@ -45,30 +45,61 @@ def users_name_info():
     return Name
 
 # def coins_page_buy_command():
-#        os.system('cls' if os.name == 'nt' else 'clear')
-#        print("""
-# -----PURCHASE PROTOCOL----
+
+    
+#     print("""
+# ╒══════════════════════════════════════════════════╕
+# │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+# │░            Coin$hell Payment Portal            ░│
+# │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+# ├──────────────────────────────────────────────────┤
+# │      please enter the following information      │
+# ╘══════════════════════════════════════════════════╛
 # """)
+#     coin_to_be_purchased_name =  input('💎 Coin #: ')
+#     coin_to_be_purchased_quantity = input('📦 Quantity: ')
+#     coin_to_be_purchased_confirmation =input('✅ Confirm purchase (y/n): ')
+
+              
+#     if coin_to_be_purchased_name == '1':
+#                 user_wallet['balance'] -= coin_prices[0]
+#                 print('ByteBucks Purchased')
+#                 print(f"New Balance: ${user_wallet['balance']:.2f}")
+#                 time.sleep(0.8)
+
+#         elif chosen_coin_to_interact == '2':
+#                 print('LunaMint Purchased')
+
+
+
+
+#     if coin_to_be_purchased_confirmation == 'y':
+        
+#         print(f"""
+#     ╔═══════════════════════════════════════╗
+#     ║   🚀✨ TRANSACTION SUCCESSFUL! ✨🚀   ║
+#     ║         🧾 Buyer's Receipt            ║ 
+#     ╠═══════════════════════════════════════╣
+#     💎 Coin #: {coin_to_be_purchased_name} | Qty: {coin_to_be_purchased_quantity} | Total:        
+#     ✅ Status: CONFIRMED                  
+#     🚀 Thanks for trading with Coin$hell """)
+#         time.sleep(0.5)
+        
+    
+#     elif coin_to_be_purchased_confirmation == 'n':
+#           print('Order Canceled!')
+#     else:
+#           print('Command Unavailable!')
+
+
 
 def coins_page():
     global user_wallet
     os.system('cls' if os.name == 'nt' else 'clear')
     time.sleep(1)
     coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)', '|🧬| GeneX(GNX)', '|🔮| Oracle(ORC)', '|🔑| KeyStone(KST)', '|🧊| CryoChain(CRC)']
-    coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
-    
-#     print(f""" • MARKET BOARD!\n
-#                       |COIN|               |VALUE|          
-#         (1)    {coin_names[0]}   ||   ${coin_prices[0]: .5f}             
-#         (2)    {coin_names[1]}    ||   ${coin_prices[1]: .5f}               
-#         (3)    {coin_names[2]}     ||   ${coin_prices[2]: .5f}              
-#         (4)    {coin_names[3]}    ||   ${coin_prices[3]: .5f}             
-#         (5)    {coin_names[4]}       ||   ${coin_prices[4]: .5f}            
-#         (6)    {coin_names[5]}  ||   ${coin_prices[5]: .5f}             
-#         (7)    {coin_names[6]}      ||   ${coin_prices[6]: .5f}            
-#         (8)    {coin_names[7]}     ||   ${coin_prices[7]: .5f} 
-#         (9)    {coin_names[8]}      ||   ${coin_prices[8]: .5f}
-#         (10)   {coin_names[9]}    ||   ${coin_prices[9]: .5f}
+#     coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
+
 
 
 #    """)
@@ -103,7 +134,7 @@ def coins_page():
      
         
         if coins_page_dashboard_choice == 'b':
-                print('buy')
+               coins_page_buy_command()
         elif coins_page_dashboard_choice == 's':
                print('sell')
         elif coins_page_dashboard_choice == 'e':
@@ -117,14 +148,14 @@ def coins_page():
 #         chosen_coin_to_interact = input("Selection one coin, enter number to buy >> ")
      
         
-#         if chosen_coin_to_interact == '1':
-#                 user_wallet['balance'] -= coin_prices[0]
-#                 print('ByteBucks Purchased')
-#                 print(f"New Balance: ${user_wallet['balance']:.2f}")
-#                 time.sleep(0.8)
+      #   if chosen_coin_to_interact == '1':
+      #           user_wallet['balance'] -= coin_prices[0]
+      #           print('ByteBucks Purchased')
+      #           print(f"New Balance: ${user_wallet['balance']:.2f}")
+      #           time.sleep(0.8)
 
-#         elif chosen_coin_to_interact == '2':
-#                 print('LunaMint Purchased')
+      #   elif chosen_coin_to_interact == '2':
+      #           print('LunaMint Purchased')
 
 #         elif chosen_coin_to_interact == '3':
 #                 os.system('cls' if os.name == 'nt' else 'clear')
@@ -140,6 +171,49 @@ def coins_page():
 #         else:
 #                 print("Selected Coin is Unavailable!")
         
+def coins_page_buy_command():
+    
+    
+    print("""
+╒══════════════════════════════════════════════════╕
+│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+│░            Coin$hell Payment Portal            ░│
+│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+├──────────────────────────────────────────────────┤
+│      please enter the following information      │
+╘══════════════════════════════════════════════════╛
+""")
+    coin_to_be_purchased_name =  input('💎 Coin #: ')
+    coin_to_be_purchased_quantity = input('📦 Quantity: ')
+    coin_to_be_purchased_confirmation =input('✅ Confirm purchase (y/n): ')
+
+              
+    if coin_to_be_purchased_name == '1':
+               total = user_wallet['balance'] - coin_prices[0]
+
+    elif coin_to_be_purchased_name == '2':
+                print('LunaMint Purchased')
+
+
+
+
+    if coin_to_be_purchased_confirmation == 'y':
+        
+        print(f"""
+    ╔═══════════════════════════════════════╗
+    ║   🚀✨ TRANSACTION SUCCESSFUL! ✨🚀   ║
+    ║         🧾 Buyer's Receipt            ║ 
+    ╠═══════════════════════════════════════╣
+    💎 Coin #: {coin_to_be_purchased_name} | Qty: {coin_to_be_purchased_quantity} | Total:        
+    ✅ Status: CONFIRMED                  
+    🚀 Thanks for trading with Coin$hell """)
+        time.sleep(0.5)
+        
+    
+    elif coin_to_be_purchased_confirmation == 'n':
+          print('Order Canceled!')
+    else:
+          print('Command Unavailable!')
 
 
 def starting_message():
