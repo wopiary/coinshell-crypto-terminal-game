@@ -6,11 +6,9 @@ def show_help():
     help_info = """
 Welcome to Coin$hell
 
-As you might have observed, Coin$hell does not support other stuff, only on the VSCode terminal. 
-I made this for the sole purpose of being easier to use.
-
-Nothing really much to teach here, controls are not complicated. 
-Just click/type, that's about it. Go on ahead and gambl— trade!
+As you might have observed, the tool is exculsively for the VSCode terminal to make 
+trading experience as straightforward as possible.  There's not much to learn—simply 
+click or type. Go on ahead and gambl— trade!
 """
     print(help_info)
 
