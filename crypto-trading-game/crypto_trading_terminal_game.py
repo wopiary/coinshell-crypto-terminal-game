@@ -34,7 +34,7 @@ def commands():
     Enter command: """).strip().lower()
 
         if user_command == 'q':
-            result = q_command.game()
+            result = q_command.main()
 
         elif user_command == 'h':
             result = h_command.show_help() 
@@ -49,3 +49,4 @@ def commands():
 if __name__ == '__main__':
     intro()
     commands()
+
