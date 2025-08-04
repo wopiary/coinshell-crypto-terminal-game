@@ -9,7 +9,7 @@ import line_graph
 
 #GLOBAL
 user_wallet = {
-       'balance': 5000.00000
+       'balance': 1000.00000
 }
 Name = None
 coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
@@ -102,7 +102,7 @@ def coins_page():
     global user_wallet
     os.system('cls' if os.name == 'nt' else 'clear')
     time.sleep(1)
-    coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)', '|🧬| GeneX(GNX)', '|🔮| Oracle(ORC)', '|🔑| KeyStone(KST)', '|🧊| CryoChain(CRC)']
+    coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)']
 #     coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
 
 
@@ -203,7 +203,30 @@ def coins_page_buy_command():
     elif coin_to_be_purchased_name == '2':
             total = coin_prices[1] * coin_to_be_purchased_quantity
             coin_name = "LunaMint"
-    
+    elif coin_to_be_purchased_name == '3':
+          total = coin_prices[2] * coin_to_be_purchased_quantity
+          coin_name = "Vironix"
+    elif coin_to_be_purchased_name == '4':
+          total = coin_prices[3] * coin_to_be_purchased_quantity
+          coin_name = "HexaFuel"
+    elif coin_to_be_purchased_name == '5':
+          total = coin_prices[4] * coin_to_be_purchased_quantity
+          coin_name = "OpalX"
+    elif coin_to_be_purchased_name == '6':
+          total = coin_prices[5] * coin_to_be_purchased_quantity
+          coin_name = "TerraGreem"
+    elif coin_to_be_purchased_name == '7':
+          total = coin_prices[6] * coin_to_be_purchased_quantity
+          coin_name = "Lumina"
+    elif coin_to_be_purchased_name == '8':
+          total = coin_prices[7] * coin_to_be_purchased_quantity
+          coin_name = "Gearcoin"
+    elif coin_to_be_purchased_name == '9':
+          total = coin_prices[8] * coin_to_be_purchased_quantity
+          coin_name = "Cosmic"
+    elif coin_to_be_purchased_name == '10':
+          total = coin_prices[9] * coin_to_be_purchased_quantity
+          coin_name = "Voltflux"
     else:
             print("Invalid coin selection!")
             return
@@ -256,7 +279,7 @@ def starting_message():
                                                                           Ready to dive into the wild world of crypto trading?
                                                                                     Here's what you need to know:
 
-                                                                                    💵 Starting Balance: $5,000
+                                                                                    💵 Starting Balance: $1,000
                                                                                    💹 Market is LIVE and volatile
                                                                                   ⌚ Every second counts in crypto!
 
