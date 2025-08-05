@@ -160,6 +160,7 @@ def coins_page_buy_command():
 
 
     if coin_to_be_purchased_confirmation.lower() == 'y':
+      if user_wallet['balance'] >= total:
         user_wallet['balance'] -= total
         if 'coins_owned' not in bag or not isinstance(bag['coins_owned'], dict):
             bag['coins_owned'] = {}
@@ -181,7 +182,9 @@ def coins_page_buy_command():
       💰 New Balance: ${user_wallet['balance']:.2f}
 """)
             time.sleep(2)
-        
+      else:
+            print('❌ Transaction failed: Insufficient funds!')
+            time.sleep(2)
     elif coin_to_be_purchased_confirmation.lower() == 'n':
         print('❌ Order Canceled!')
     else:
@@ -240,11 +243,16 @@ def coins_page_sell_command():
             print("Invalid coin selection!")
             return
 
-    
 
     if coin_to_be_purchased_confirmation.lower() == 'y':
         
-            user_wallet['balance'] += total
+        if coin_name in bag['coins_owned']:
+            bag['coins_owned'][coin_name] -= coin_to_be_purchased_quantity, [coin_name]
+            user_wallet['balance'] += coin_prices
+        elif coin_name not in bag['coins_owned']:
+             print('yo broke ahh dont even got that, get yo')
+        else:
+            bag['coins_owned'][coin_name] = coin_to_be_purchased_quantity
         
             print(f"""
       ╔═══════════════════════════════════════╗
