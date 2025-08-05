@@ -12,7 +12,7 @@ user_wallet = {
        'balance': 1000.00
 }
 Name = None
-coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
+# coin_prices = [random.uniform(1.0, 1000.0) for _ in range(14)]
 bag = {
       'coins_owned': []
 }
@@ -49,14 +49,17 @@ def users_name_info():
     Name = user_name
     return Name
 
+def updates_coin_prices(): 
+      global coin_prices
+      coin_prices = [random.uniform(1.0, 1000.0) for _ in range(14)]
 
 def coins_page():
     global user_wallet
     os.system('cls' if os.name == 'nt' else 'clear')
     time.sleep(1)
     coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)']
-
-
+    
+    global coin_prices
 
     print(f"""• Market Board
                  #  | COIN NAME                | VALUE ($)      
@@ -80,28 +83,30 @@ def coins_page():
                 (9) | {coin_names[8]}         | ${coin_prices[8]:.5f}
           ----------|--------------------------|----------------
                 (10)| {coin_names[9]}       | ${coin_prices[9]:.5f}
+
 """)
-    while True:
+    print(f'💰 Wallet Balance: {user_wallet['balance']:.2f}')
+
         
-        coins_page_dashboard_choice = input(
+    coins_page_dashboard_choice = input(
 """(b) 🟢 Buy  |  🔴 (s) Sell  |  🚪 (e) Return to Home
 """)
      
         
-        if coins_page_dashboard_choice == 'b':
+    if coins_page_dashboard_choice == 'b':
                coins_page_buy_command()
-        elif coins_page_dashboard_choice == 's':
+    elif coins_page_dashboard_choice == 's':
                coins_page_sell_command()
-        elif coins_page_dashboard_choice == 'e':
+    elif coins_page_dashboard_choice == 'e':
                return 'back'
-        else:
-               print('Command Unavailable!\n')
+
         
 
 
 
 
 def coins_page_buy_command():
+    global coin_prices
     print("""
 ╒══════════════════════════════════════════════════╕
 │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
@@ -335,6 +340,7 @@ def main():
                 elif user_dashboard_choice == 'm':
                         print('market logic')
                 elif user_dashboard_choice == 'r':
+                        updates_coin_prices()
                         coins_page()
                 elif user_dashboard_choice == 'e':
                         break
