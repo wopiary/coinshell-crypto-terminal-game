@@ -9,12 +9,13 @@ import line_graph
 
 #GLOBAL
 user_wallet = {
-       'balance': 1000.00000
+       'balance': 1000.00
 }
 Name = None
 coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
-
-
+bag = {
+      'coins_owned': []
+}
 
 
 
@@ -48,66 +49,15 @@ def users_name_info():
     Name = user_name
     return Name
 
-# def coins_page_buy_command():
-
-    
-#     print("""
-# ╒══════════════════════════════════════════════════╕
-# │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
-# │░            Coin$hell Payment Portal            ░│
-# │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
-# ├──────────────────────────────────────────────────┤
-# │      please enter the following information      │
-# ╘══════════════════════════════════════════════════╛
-# """)
-#     coin_to_be_purchased_name =  input('💎 Coin #: ')
-#     coin_to_be_purchased_quantity = input('📦 Quantity: ')
-#     coin_to_be_purchased_confirmation =input('✅ Confirm purchase (y/n): ')
-
-              
-#     if coin_to_be_purchased_name == '1':
-#                 user_wallet['balance'] -= coin_prices[0]
-#                 print('ByteBucks Purchased')
-#                 print(f"New Balance: ${user_wallet['balance']:.2f}")
-#                 time.sleep(0.8)
-
-#         elif chosen_coin_to_interact == '2':
-#                 print('LunaMint Purchased')
-
-
-
-
-#     if coin_to_be_purchased_confirmation == 'y':
-        
-#         print(f"""
-#     ╔═══════════════════════════════════════╗
-#     ║   🚀✨ TRANSACTION SUCCESSFUL! ✨🚀   ║
-#     ║         🧾 Buyer's Receipt            ║ 
-#     ╠═══════════════════════════════════════╣
-#     💎 Coin #: {coin_to_be_purchased_name} | Qty: {coin_to_be_purchased_quantity} | Total:        
-#     ✅ Status: CONFIRMED                  
-#     🚀 Thanks for trading with Coin$hell """)
-#         time.sleep(0.5)
-        
-    
-#     elif coin_to_be_purchased_confirmation == 'n':
-#           print('Order Canceled!')
-#     else:
-#           print('Command Unavailable!')
-
-
-
 
 def coins_page():
     global user_wallet
     os.system('cls' if os.name == 'nt' else 'clear')
     time.sleep(1)
     coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)']
-#     coin_prices = [random.uniform(1.0, 1500.0) for _ in range(14)]
 
 
 
-#    """)
     print(f"""• Market Board
                  #  | COIN NAME                | VALUE ($)      
           ----------|--------------------------|----------------
@@ -141,47 +91,17 @@ def coins_page():
         if coins_page_dashboard_choice == 'b':
                coins_page_buy_command()
         elif coins_page_dashboard_choice == 's':
-               print('sell')
+               coins_page_sell_command()
         elif coins_page_dashboard_choice == 'e':
                return 'back'
         else:
-               print('Command Unavailable!')
+               print('Command Unavailable!\n')
         
-
-#     while True:
-        
-#         chosen_coin_to_interact = input("Selection one coin, enter number to buy >> ")
-     
-        
-      #   if chosen_coin_to_interact == '1':
-      #           user_wallet['balance'] -= coin_prices[0]
-      #           print('ByteBucks Purchased')
-      #           print(f"New Balance: ${user_wallet['balance']:.2f}")
-      #           time.sleep(0.8)
-
-      #   elif chosen_coin_to_interact == '2':
-      #           print('LunaMint Purchased')
-
-#         elif chosen_coin_to_interact == '3':
-#                 os.system('cls' if os.name == 'nt' else 'clear')
-#                 print('Vironix Purchased')
-#         elif chosen_coin_to_interact == '4':
-#                 os.system('cls' if os.name == 'nt' else 'clear')
-#                 print('HexaFuel Purchased')
-#         elif chosen_coin_to_interact == '5':
-#                 os.system('cls' if os.name == 'nt' else 'clear')
-#                 print('OpalX Purchased')
-#         elif chosen_coin_to_interact == '11':
-#                return 'back'
-#         else:
-#                 print("Selected Coin is Unavailable!")
 
 
 
 
 def coins_page_buy_command():
-    
-    
     print("""
 ╒══════════════════════════════════════════════════╕
 │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
@@ -232,13 +152,94 @@ def coins_page_buy_command():
             return
 
     
-    if total > user_wallet['balance']:
-            print("❌ Insufficient funds!")
+
+
+    if coin_to_be_purchased_confirmation.lower() == 'y':
+        user_wallet['balance'] -= total
+        if 'coins_owned' not in bag or not isinstance(bag['coins_owned'], dict):
+            bag['coins_owned'] = {}
+        
+        if coin_name in bag['coins_owned']:
+            bag['coins_owned'][coin_name] += coin_to_be_purchased_quantity
+        else:
+            bag['coins_owned'][coin_name] = coin_to_be_purchased_quantity
+            print(f"""
+      ╔═══════════════════════════════════════╗
+      ║   🚀✨ TRANSACTION SUCCESSFUL! ✨🚀   ║
+      ║         🧾 Buyer's Receipt            ║ 
+      ╠═══════════════════════════════════════╣
+      ║ 💎 Coin #: {coin_to_be_purchased_name} | Qty: {coin_to_be_purchased_quantity} | Total: ${total:.2f}║
+      ║ ✅ Status: CONFIRMED                  ║
+      ║ 🚀 Thanks for trading with Coin$hell! ║
+      ╚═══════════════════════════════════════╝
+
+      💰 New Balance: ${user_wallet['balance']:.2f}
+""")
+            time.sleep(2)
+        
+    elif coin_to_be_purchased_confirmation.lower() == 'n':
+        print('❌ Order Canceled!')
+    else:
+        print('❌ Command Unavailable!')
+
+
+
+
+def coins_page_sell_command():
+    print("""
+╒══════════════════════════════════════════════════╕
+│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+│░            Coin$hell Sale Portal               ░│
+│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
+├──────────────────────────────────────────────────┤
+│      please enter the following information      │
+╘══════════════════════════════════════════════════╛
+""")
+    coin_to_be_purchased_name =  input('💎 Coin #: ')
+    coin_to_be_purchased_quantity = int(input('📦 Quantity: '))
+    coin_to_be_purchased_confirmation =input('✅ Confirm purchase (y/n): ')
+
+    total = 0
+    coin_name = ''
+    if coin_to_be_purchased_name == '1':
+            total = coin_prices[0] * coin_to_be_purchased_quantity
+            coin_name = 'ByteBucks'
+    elif coin_to_be_purchased_name == '2':
+            total = coin_prices[1] * coin_to_be_purchased_quantity
+            coin_name = "LunaMint"
+    elif coin_to_be_purchased_name == '3':
+          total = coin_prices[2] * coin_to_be_purchased_quantity
+          coin_name = "Vironix"
+    elif coin_to_be_purchased_name == '4':
+          total = coin_prices[3] * coin_to_be_purchased_quantity
+          coin_name = "HexaFuel"
+    elif coin_to_be_purchased_name == '5':
+          total = coin_prices[4] * coin_to_be_purchased_quantity
+          coin_name = "OpalX"
+    elif coin_to_be_purchased_name == '6':
+          total = coin_prices[5] * coin_to_be_purchased_quantity
+          coin_name = "TerraGreem"
+    elif coin_to_be_purchased_name == '7':
+          total = coin_prices[6] * coin_to_be_purchased_quantity
+          coin_name = "Lumina"
+    elif coin_to_be_purchased_name == '8':
+          total = coin_prices[7] * coin_to_be_purchased_quantity
+          coin_name = "Gearcoin"
+    elif coin_to_be_purchased_name == '9':
+          total = coin_prices[8] * coin_to_be_purchased_quantity
+          coin_name = "Cosmic"
+    elif coin_to_be_purchased_name == '10':
+          total = coin_prices[9] * coin_to_be_purchased_quantity
+          coin_name = "Voltflux"
+    else:
+            print("Invalid coin selection!")
             return
+
+    
 
     if coin_to_be_purchased_confirmation.lower() == 'y':
         
-            user_wallet['balance'] -= total
+            user_wallet['balance'] += total
         
             print(f"""
       ╔═══════════════════════════════════════╗
@@ -259,6 +260,7 @@ def coins_page_buy_command():
     else:
         print('❌ Command Unavailable!')
 
+        
 
 
 
@@ -308,23 +310,28 @@ def starting_message():
 
 def main():
         starting_message()
+
+
         while True:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 
                 print('• Market is OPEN!\n')
                 line_graph.line_graphs()
                 print(f'\n👤: {Name}')
-                print(f'💰 Wallet Balance: {user_wallet['balance']}')
+                print(f'💰 Wallet Balance: {user_wallet['balance']:.2f}')
+                print(f'🎒 Inventory: {bag['coins_owned']}')
                 fake_news.fake_news()
         
                         
 
 
-                user_dashboard_choice = input("""\n(v) 📊 View portfolio  |  (m) 📈 View market  |  (r) 🪙 Purchase/sell coins  |  (e) 🚪 Exit                       
+                user_dashboard_choice = input("""\n(v) 📊 View portfolio  |  (b) 🕳️  Black market   |   (m) 📈 View market  |  (r) 🪙 Purchase/sell coins  |  (e) 🚪 Exit                       
 """).strip().lower()
                 if user_dashboard_choice == 'v':
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print('portfolio logic')
+                elif user_dashboard_choice == 'b':
+                        print('black market')
                 elif user_dashboard_choice == 'm':
                         print('market logic')
                 elif user_dashboard_choice == 'r':
