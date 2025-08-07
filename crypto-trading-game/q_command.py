@@ -193,87 +193,102 @@ def coins_page_buy_command():
 
 
 
+
+
+
+
 def coins_page_sell_command():
     print("""
 ╒══════════════════════════════════════════════════╕
 │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
-│░            Coin$hell Sale Portal               ░│
+│░            Coin$hell Sale Portal              ░│
 │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
 ├──────────────────────────────────────────────────┤
-│      please enter the following information      │
+│        please enter the following information    │
 ╘══════════════════════════════════════════════════╛
 """)
-    coin_to_be_purchased_name =  input('💎 Coin #: ')
+    coin_to_be_purchased_name = input('💎 Coin #: ')
     coin_to_be_purchased_quantity = int(input('📦 Quantity: '))
-    coin_to_be_purchased_confirmation =input('✅ Confirm purchase (y/n): ')
+    coin_to_be_purchased_confirmation = input('✅ Confirm purchase (y/n): ')
 
     total = 0
     coin_name = ''
     if coin_to_be_purchased_name == '1':
-            total = coin_prices[0] * coin_to_be_purchased_quantity
-            coin_name = 'ByteBucks'
+        total = coin_prices[0] * coin_to_be_purchased_quantity
+        coin_name = 'ByteBucks'
     elif coin_to_be_purchased_name == '2':
-            total = coin_prices[1] * coin_to_be_purchased_quantity
-            coin_name = "LunaMint"
+        total = coin_prices[1] * coin_to_be_purchased_quantity
+        coin_name = "LunaMint"
     elif coin_to_be_purchased_name == '3':
-          total = coin_prices[2] * coin_to_be_purchased_quantity
-          coin_name = "Vironix"
+        total = coin_prices[2] * coin_to_be_purchased_quantity
+        coin_name = "Vironix"
     elif coin_to_be_purchased_name == '4':
-          total = coin_prices[3] * coin_to_be_purchased_quantity
-          coin_name = "HexaFuel"
+        total = coin_prices[3] * coin_to_be_purchased_quantity
+        coin_name = "HexaFuel"
     elif coin_to_be_purchased_name == '5':
-          total = coin_prices[4] * coin_to_be_purchased_quantity
-          coin_name = "OpalX"
+        total = coin_prices[4] * coin_to_be_purchased_quantity
+        coin_name = "OpalX"
     elif coin_to_be_purchased_name == '6':
-          total = coin_prices[5] * coin_to_be_purchased_quantity
-          coin_name = "TerraGreem"
+        total = coin_prices[5] * coin_to_be_purchased_quantity
+        coin_name = "TerraGreem"
     elif coin_to_be_purchased_name == '7':
-          total = coin_prices[6] * coin_to_be_purchased_quantity
-          coin_name = "Lumina"
+        total = coin_prices[6] * coin_to_be_purchased_quantity
+        coin_name = "Lumina"
     elif coin_to_be_purchased_name == '8':
-          total = coin_prices[7] * coin_to_be_purchased_quantity
-          coin_name = "Gearcoin"
+        total = coin_prices[7] * coin_to_be_purchased_quantity
+        coin_name = "Gearcoin"
     elif coin_to_be_purchased_name == '9':
-          total = coin_prices[8] * coin_to_be_purchased_quantity
-          coin_name = "Cosmic"
+        total = coin_prices[8] * coin_to_be_purchased_quantity
+        coin_name = "Cosmic"
     elif coin_to_be_purchased_name == '10':
-          total = coin_prices[9] * coin_to_be_purchased_quantity
-          coin_name = "Voltflux"
+        total = coin_prices[9] * coin_to_be_purchased_quantity
+        coin_name = "Voltflux"
     else:
-            print("Invalid coin selection!")
-            return
-
+        print("Invalid coin selection!")
+        return
 
     if coin_to_be_purchased_confirmation.lower() == 'y':
-        
-        if coin_name in bag['coins_owned']:
-            bag['coins_owned'][coin_name] -= coin_to_be_purchased_quantity, [coin_name]
-            user_wallet['balance'] += coin_prices
-        elif coin_name not in bag['coins_owned']:
-             print('yo broke ahh dont even got that, get yo')
-        else:
-            bag['coins_owned'][coin_name] = coin_to_be_purchased_quantity
-        
-            print(f"""
-      ╔═══════════════════════════════════════╗
-      ║   🚀✨ TRANSACTION SUCCESSFUL! ✨🚀   ║
-      ║         🧾 Buyer's Receipt            ║ 
-      ╠═══════════════════════════════════════╣
-      ║ 💎 Coin #: {coin_to_be_purchased_name} | Qty: {coin_to_be_purchased_quantity} | Total: ${total:.2f}║
-      ║ ✅ Status: CONFIRMED                  ║
-      ║ 🚀 Thanks for trading with Coin$hell! ║
-      ╚═══════════════════════════════════════╝
+        if coin_name in bag['coins_owned'] and coin_to_be_purchased_quantity <= bag['coins_owned'][coin_name]:
+            bag['coins_owned'][coin_name] -= coin_to_be_purchased_quantity
 
-      💰 New Balance: ${user_wallet['balance']:.2f}
+            if bag['coins_owned'][coin_name] == 0:
+                del bag['coins_owned'][coin_name]
+
+            user_wallet['balance'] += total
+
+            print(f"""
+    ╔═══════════════════════════════════════╗
+    ║  🚀✨ TRANSACTION SUCCESSFUL! ✨🚀   ║
+    ║        🧾 Seller's Receipt         ║ 
+    ╠═══════════════════════════════════════╣
+    ║ 💎 Coin #: {coin_to_be_purchased_name} | Qty: {coin_to_be_purchased_quantity} | Total: ${total:.2f}║
+    ║ ✅ Status: CONFIRMED                  ║
+    ║ 🚀 Thanks for trading with Coin$hell! ║
+    ╚═══════════════════════════════════════╝
+
+    💰 New Balance: ${user_wallet['balance']:.2f}
 """)
+        else:
+            print('❌ Transaction failed: Coins Not in Inventory!')
+
             time.sleep(2)
-        
     elif coin_to_be_purchased_confirmation.lower() == 'n':
         print('❌ Order Canceled!')
     else:
         print('❌ Command Unavailable!')
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
