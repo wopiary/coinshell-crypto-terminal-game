@@ -1,0 +1,16 @@
+[
+    {
+        "UniqueId": "69700bf9-a71f-485f-a518-f8b587e97be9",
+        "username": "Dwayne",
+        "password": "masterbaiter",
+        "Balance": 1500,
+        "OwnedCoins": {}
+    },
+    {
+        "UniqueId": "8cc77b87-7c81-4972-a5db-5ee5b065d9a0",
+        "username": "SuperCreek",
+        "password": "Dandelion123",
+        "Balance": 1500,
+        "OwnedCoins": {}
+    }
+]
