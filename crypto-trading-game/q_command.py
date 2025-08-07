@@ -42,6 +42,8 @@ ceo_message = """
 
 
 
+
+
 def users_name_info():
     global Name
     user_name = input("""       
@@ -51,8 +53,14 @@ def users_name_info():
 
 def updates_coin_prices(): 
       global coin_prices
-      coin_prices = [random.uniform(1.0, 1000.0) for _ in range(14)]
+      coin_prices = [random.uniform(-1000.0, 1000.0) for _ in range(14)]
 
+
+
+
+
+
+# 'R' COMMAND, BUYING AND SELLING
 def coins_page():
     global user_wallet
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -86,7 +94,7 @@ def coins_page():
 
 """)
     print(f'💰 Wallet Balance: {user_wallet['balance']:.2f}')
-
+    print(f'🎒 Inventory: {bag['coins_owned']}')
         
     coins_page_dashboard_choice = input(
 """(b) 🟢 Buy  |  🔴 (s) Sell  |  🚪 (e) Return to Home
@@ -100,7 +108,7 @@ def coins_page():
     elif coins_page_dashboard_choice == 'e':
                return 'back'
 
-        
+
 
 
 
@@ -116,73 +124,111 @@ def coins_page_buy_command():
 │      please enter the following information      │
 ╘══════════════════════════════════════════════════╛
 """)
-    coin_to_be_purchased_name =  input('💎 Coin #: ')
+    coin_to_be_purchased_name = input('💎 Coin #: ')
     coin_to_be_purchased_quantity = int(input('📦 Quantity: '))
-    coin_to_be_purchased_confirmation =input('✅ Confirm purchase (y/n): ')
+    coin_to_be_purchased_confirmation = input('✅ Confirm purchase (y/n): ')
 
     total = 0
     coin_name = ''
+
     if coin_to_be_purchased_name == '1':
-            total = coin_prices[0] * coin_to_be_purchased_quantity
-            coin_name = 'ByteBucks'
-    elif coin_to_be_purchased_name == '2':
-            total = coin_prices[1] * coin_to_be_purchased_quantity
-            coin_name = "LunaMint"
-    elif coin_to_be_purchased_name == '3':
-          total = coin_prices[2] * coin_to_be_purchased_quantity
-          coin_name = "Vironix"
-    elif coin_to_be_purchased_name == '4':
-          total = coin_prices[3] * coin_to_be_purchased_quantity
-          coin_name = "HexaFuel"
-    elif coin_to_be_purchased_name == '5':
-          total = coin_prices[4] * coin_to_be_purchased_quantity
-          coin_name = "OpalX"
-    elif coin_to_be_purchased_name == '6':
-          total = coin_prices[5] * coin_to_be_purchased_quantity
-          coin_name = "TerraGreem"
-    elif coin_to_be_purchased_name == '7':
-          total = coin_prices[6] * coin_to_be_purchased_quantity
-          coin_name = "Lumina"
-    elif coin_to_be_purchased_name == '8':
-          total = coin_prices[7] * coin_to_be_purchased_quantity
-          coin_name = "Gearcoin"
-    elif coin_to_be_purchased_name == '9':
-          total = coin_prices[8] * coin_to_be_purchased_quantity
-          coin_name = "Cosmic"
-    elif coin_to_be_purchased_name == '10':
-          total = coin_prices[9] * coin_to_be_purchased_quantity
-          coin_name = "Voltflux"
-    else:
-            print("Invalid coin selection!")
+        if coin_prices[0] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
             return
-
-    
-
+        total = coin_prices[0] * coin_to_be_purchased_quantity
+        coin_name = 'ByteBucks'
+    elif coin_to_be_purchased_name == '2':
+        if coin_prices[1] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[1] * coin_to_be_purchased_quantity
+        coin_name = "LunaMint"
+    elif coin_to_be_purchased_name == '3':
+        if coin_prices[2] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[2] * coin_to_be_purchased_quantity
+        coin_name = "Vironix"
+    elif coin_to_be_purchased_name == '4':
+        if coin_prices[3] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[3] * coin_to_be_purchased_quantity
+        coin_name = "HexaFuel"
+    elif coin_to_be_purchased_name == '5':
+        if coin_prices[4] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[4] * coin_to_be_purchased_quantity
+        coin_name = "OpalX"
+    elif coin_to_be_purchased_name == '6':
+        if coin_prices[5] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[5] * coin_to_be_purchased_quantity
+        coin_name = "TerraGreem"
+    elif coin_to_be_purchased_name == '7':
+        if coin_prices[6] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[6] * coin_to_be_purchased_quantity
+        coin_name = "Lumina"
+    elif coin_to_be_purchased_name == '8':
+        if coin_prices[7] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[7] * coin_to_be_purchased_quantity
+        coin_name = "Gearcoin"
+    elif coin_to_be_purchased_name == '9':
+        if coin_prices[8] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[8] * coin_to_be_purchased_quantity
+        coin_name = "Cosmic"
+    elif coin_to_be_purchased_name == '10':
+        if coin_prices[9] <= 0:
+            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
+            time.sleep(2)
+            return
+        total = coin_prices[9] * coin_to_be_purchased_quantity
+        coin_name = "Voltflux"
+    else:
+        print("Invalid coin selection!")
+        return
 
     if coin_to_be_purchased_confirmation.lower() == 'y':
-      if user_wallet['balance'] >= total:
-        user_wallet['balance'] -= total
-        if 'coins_owned' not in bag or not isinstance(bag['coins_owned'], dict):
-            bag['coins_owned'] = {}
-        
-        if coin_name in bag['coins_owned']:
-            bag['coins_owned'][coin_name] += coin_to_be_purchased_quantity
-        else:
-            bag['coins_owned'][coin_name] = coin_to_be_purchased_quantity
+        if user_wallet['balance'] >= total:
+            user_wallet['balance'] -= total
+            if 'coins_owned' not in bag or not isinstance(bag['coins_owned'], dict):
+                bag['coins_owned'] = {}
+            
+            if coin_name in bag['coins_owned']:
+                bag['coins_owned'][coin_name] += coin_to_be_purchased_quantity
+            else:
+                bag['coins_owned'][coin_name] = coin_to_be_purchased_quantity
             print(f"""
-      ╔═══════════════════════════════════════╗
-      ║   🚀✨ TRANSACTION SUCCESSFUL! ✨🚀   ║
-      ║         🧾 Buyer's Receipt            ║ 
-      ╠═══════════════════════════════════════╣
-      ║ 💎 Coin #: {coin_to_be_purchased_name} | Qty: {coin_to_be_purchased_quantity} | Total: ${total:.2f}║
-      ║ ✅ Status: CONFIRMED                  ║
-      ║ 🚀 Thanks for trading with Coin$hell! ║
-      ╚═══════════════════════════════════════╝
+╔═══════════════════════════════════════╗
+║   🚀✨ TRANSACTION SUCCESSFUL! ✨🚀   ║
+║         🧾 Buyer's Receipt            ║ 
+╠═══════════════════════════════════════╣
+║ 💎 Coin #: {coin_to_be_purchased_name} | Qty: {coin_to_be_purchased_quantity} | Total: ${total:.2f}║
+║ ✅ Status: CONFIRMED                  ║
+║ 🚀 Thanks for trading with Coin$hell! ║
+╚═══════════════════════════════════════╝
 
-      💰 New Balance: ${user_wallet['balance']:.2f}
+💰 New Balance: ${user_wallet['balance']:.2f}
 """)
             time.sleep(2)
-      else:
+        else:
             print('❌ Transaction failed: Insufficient funds!')
             time.sleep(2)
     elif coin_to_be_purchased_confirmation.lower() == 'n':
@@ -190,18 +236,11 @@ def coins_page_buy_command():
     else:
         print('❌ Command Unavailable!')
 
-
-
-
-
-
-
-
 def coins_page_sell_command():
     print("""
 ╒══════════════════════════════════════════════════╕
 │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
-│░            Coin$hell Sale Portal              ░│
+│░             Coin$hell Sale Portal              ░│
 │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│
 ├──────────────────────────────────────────────────┤
 │        please enter the following information    │
@@ -281,17 +320,7 @@ def coins_page_sell_command():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+#STARTING MESSAGE
 def starting_message():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -332,6 +361,8 @@ def starting_message():
     print("\n\nMarket loaded! Let's start gambl- trading I mean!")
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
 
 
 
