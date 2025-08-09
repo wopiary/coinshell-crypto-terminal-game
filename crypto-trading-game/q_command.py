@@ -5,11 +5,11 @@ import random
 import threading
 import fake_news
 import line_graph
-
+import string
 
 #GLOBAL
 user_wallet = {
-       'balance': 1000.00
+       'balance': 500.00
 }
 Name = None
 # coin_prices = [random.uniform(1.0, 1000.0) for _ in range(14)]
@@ -53,10 +53,127 @@ def users_name_info():
 
 def updates_coin_prices(): 
       global coin_prices
-      coin_prices = [random.uniform(-1000.0, 1000.0) for _ in range(14)]
+      coin_prices = [random.uniform(-1000.0, 400.0) for _ in range(14)]
 
 
+# 'B' COMMAND
 
+black_market_page_product_category = [
+    "Crypto Exchange",
+    "Compromised Coinshell Accounts",
+    "Misc. Black Market Goods",
+    "Exit Silk Claw"
+]
+def black_market_page_generate_key(length =6):
+    return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
+
+
+def black_market_page():
+    global user_wallet
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+    
+    
+    # # Spooky loading effect
+    # print("    🌐 Initiating secure connection to darknet terminal...")
+    # time.sleep(2)
+    # os.system('cls' if os.name == 'nt' else 'clear') 
+    # print("    🔐 Authenticating user credentials...")
+    # time.sleep(2)
+    # os.system('cls' if os.name == 'nt' else 'clear')
+    # print("    👁️  Synchronizing with decentralized nodes...")
+    # time.sleep(1.5)
+    # os.system('cls' if os.name == 'nt' else 'clear')
+
+    # print("    ⚡ Connection established. Welcome to the Market!")
+    # time.sleep(2)
+    # os.system('cls' if os.name == 'nt' else 'clear')
+
+
+    session_code_first_num = random.randint(1,9)
+    session_code_second_num = random.randint(10,99)
+    session_code_letters = ''.join(random.choices(string.ascii_uppercase, k=3))
+    account_num = random.randint(1000,9999)
+
+    access_keys = {black_market_page_generate_key(): category for category in black_market_page_product_category}
+
+    print(f"""
+⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⠀⢠⢤⣠⣶⣿⣿⡿⠿⠛⠛⠛⠛⠉⠛⠛⠛⠛⠿⣷⡦⠞⣩⣶⣸⡆⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⠀⠀⣠⣾⡤⣌⠙⠻⣅⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠔⠋⢀⣾⣿⣿⠃⣇⠀⠀⠀⠀⠀⠀⠀
+            ⠀⠀⠀⠀⣠⣾⣿⡟⢇⢻⣧⠄⠀⠈⢓⡢⠴⠒⠒⠒⠒⡲⠚⠁⠀⠐⣪⣿⣿⡿⡄⣿⣷⡄⠀⠀⠀⠀⠀
+            ⠀⠀⠀⣠⣿⣿⠟⠁⠸⡼⣿⡂⠀⠀⠈⠁⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠉⠹⣿⣧⢳⡏⠹⣷⡄⠀⠀⠀⠀
+            ⠀⠀⣰⣿⡿⠃⠀⠀⠀⢧⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⠇⡸⠀⠀⠘⢿⣦⣄⠀⠀
+            ⠀⢰⣿⣿⠃⠀⠀⠀⠀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⠀⠀⠀⠀⠀⠀⠰⡇⠀⠀⠀⠈⣿⣿⣆⠀
+            ⠀⣿⣿⡇⠀⠀⠀⠀⢰⠇⠀⢺⡇⣄⠀⠀⠀⠀⣤⣶⣀⣿⠃⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⠀⠀⠸⣿⣿⡀
+            ⢸⣿⣿⠀⠀⠀⠀⠀⢽⠀⢀⡈⠉⢁⣀⣀⠀⠀⠀⠉⣉⠁⠀⠀⠀⣀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⣿⣿⡇
+            ⢸⣿⡟⠀⠀⠀⠠⠀⠈⢧⡀⠀⠀⠀⠹⠁⠀⠀⠀⠀⠀⠀⠠⢀⠀⠀⠀⠀⠀⢼⠁⠀⠀⠀⠀⠀⢹⣿⡇
+            ⢸⣿⣿⠀⠀⠀⠀⠀⠠⠀⠙⢦⣀⠠⠊⠉⠂⠄⠀⠀⠀⠈⠀⠀⠀⣀⣤⣤⡾⠘⡆⠀⠀⠀⠀⠀⣾⣿⡇
+            ⠘⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⢠⠜⠳⣤⡀⠀⠀⣀⣤⡤⣶⣾⣿⣿⣿⠟⠁⠀⠀⡸⢦⣄⠀⠀⢀⣿⣿⠇
+            ⠀⢿⣿⣧⠀⠀⠀⠀⠀⣠⣤⠞⠀⠀⠀⠙⠁⠙⠉⠀⠀⠸⣛⡿⠉⠀⠀⠀⢀⡜⠀⠀⠈⠙⠢⣼⣿⡿⠀
+            ⠀⠈⣿⣿⣆⠀⠀⢰⠋⠡⡇⠀⡀⣀⣤⢢⣤⣤⣀⠀⠀⣾⠟⠀⠀⠀⠀⢀⠎⠀⠀⠀⠀⠀⣰⣿⣿⠁⠀
+      ⠀⠀⠀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     ████  SILK CLAW MARKETPLACE v3.1  ████   [SECURE NODE: ACTIVE]
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+      Session: #{session_code_letters}{session_code_first_num}-{session_code_second_num} │ Encrypted Route: ONION://v3
+      Account: ANON-{account_num} │ Clearance Level: OMEGA
+──────────────────────────────────────────────────────────────────────
+      """)
+    
+    for key, section in access_keys.items():
+      print(f"?  {key}   – {section}")
+
+    black_market_page_choice = input("""
+Enter Access Key to Proceed:
+""")
+    
+    if black_market_page_choice in access_keys:
+        section = access_keys[black_market_page_choice]
+        print(f"\n[ACCESS GRANTED] Redirecting to {section}...\n")
+
+    if section == 'Crypto Exchange':
+        black_market_page_crypto_coin()
+
+    elif section =='Exit Silk Claw':
+         return 'back'
+        
+    else:
+        print("\n[ACCESS DENIED] Invalid key. Disconnecting...\n")
+        time.sleep(1.5)
+
+
+def black_market_page_crypto_coin():
+            os.system('cls' if os.name=='nt' else 'clear')
+            bm_crypto_exchange_page_coin_names = [
+            "🕱 Shadowcoin (SHC)",
+            "⚓ Dreadnaught (DNT)",
+            "🐍 Chimera (CMR)",
+            "✴ Aetherium (AET)",
+            "🌑 Aphelion (APH)"
+        ]
+            bm_crypto_exchange_page_coin_prices = [random.uniform(5000,99999) for _ in range(6)]
+            bm_crypto_exchange_page_coin_value = [random.uniform(-99999,99999) for _ in range(6)]
+            print(f"""
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[CRYPTO EXCHANGE NODE] — SILK CLAW MARKETPLACE v3.1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Status: ACTIVE │ Wallet Integration: ENABLED │ Escrow: SECURED
+Wallet: ${user_wallet['balance']:.2f}
+──────────────────────────────────────────────────────────────────────
+ ID   │ ITEM/DESCRIPTION                  │ PRICE 
+──────┼───────────────────────────────────┼───────────────────────────
+ 001  │ 🕱 Shadowcoin (SHC)                │ ${bm_crypto_exchange_page_coin_prices[0]:.2f}
+ 002  │ ⚓ Dreadnaught (DNT)              │ ${bm_crypto_exchange_page_coin_prices[1]:.2f}
+ 003  │ 🐍 Chimera (CMR)                  │ ${bm_crypto_exchange_page_coin_prices[2]:.2f}
+ 004  │ ✴ Aetherium (AET)                 │ ${bm_crypto_exchange_page_coin_prices[3]:.2f}
+ 005  │ 🌑 Aphelion (APH)                 │ ${bm_crypto_exchange_page_coin_prices[4]:.2f}
+──────────────────────────────────────────────────────────────────────
+[1] Purchase Coin
+[2] Dump Coin
+[3] Return to Access Gate """)  
+            print("""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━""")
+            black_market_page_user_input = input('Enter your choice:')
 
 
 
@@ -338,7 +455,7 @@ def starting_message():
                                                                           Ready to dive into the wild world of crypto trading?
                                                                                     Here's what you need to know:
 
-                                                                                    💵 Starting Balance: $1,000
+                                                                                    💵 Starting Balance: $100
                                                                                    💹 Market is LIVE and volatile
                                                                                   ⌚ Every second counts in crypto!
 
@@ -377,7 +494,7 @@ def main():
                 print('• Market is OPEN!\n')
                 line_graph.line_graphs()
                 print(f'\n👤: {Name}')
-                print(f'💰 Wallet Balance: {user_wallet['balance']:.2f}')
+                print(f'💰 Wallet Balance: ${user_wallet['balance']:.2f}')
                 print(f'🎒 Inventory: {bag['coins_owned']}')
                 fake_news.fake_news()
         
@@ -390,7 +507,7 @@ def main():
                         os.system('cls' if os.name == 'nt' else 'clear')
                         print('portfolio logic')
                 elif user_dashboard_choice == 'b':
-                        print('black market')
+                        black_market_page()
                 elif user_dashboard_choice == 'm':
                         print('market logic')
                 elif user_dashboard_choice == 'r':
