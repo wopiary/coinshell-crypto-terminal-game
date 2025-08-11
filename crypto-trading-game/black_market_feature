@@ -89,6 +89,7 @@ Enter Access Key to Proceed:
         
     else:
         print("\n[ACCESS DENIED] Invalid key. Disconnecting...\n")
+        return black_market_page()
         time.sleep(1.5)
 
 
@@ -125,17 +126,18 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
 [2] Dump Coin
 [3] Return to Access Gate """)  
             print("""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━""")
-            black_market_page_crypto_coin_user_input = input('Enter your choice:')
+            black_market_page_crypto_coin_user_input = input('Enter your choice: ')
 
             if black_market_page_crypto_coin_user_input == '1':
                  os.system('cls' if os.name == 'nt' else 'clear') 
                  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
-                 time.sleep(2)
+                 time.sleep(1.5)
                  print("    🔐 Validating PGP keys and executing secure handshake...")
-                 time.sleep(2)
+                 time.sleep(1.5)
                  print("    🔄 Synchronizing transaction logs and validating cipher chains...")
                  time.sleep(1.5)
-                 print("    \n🟢 Connection established. Market is online. Stay anonymous.")
+                 os.system('cls' if os.name == 'nt' else 'clear') 
+                 print("    🟢 Connection established. Market is online. Stay anonymous.")
                  time.sleep(2)
                 
                  black_market_page_crypto_coin_purchase_coin_page()
@@ -213,7 +215,13 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                         bag_black_market['crypto_coin'][black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased] += black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
                     else:
                         bag_black_market['crypto_coin'][black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased] = black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
+                    time.sleep(1)
 
+                    print("\n\n")
+                    print("    ➡️ Executing decentralized transaction. Awaiting block confirmation...")
+                    time.sleep(2)
+                    print("    ✅ Transaction hash generated and validated. Escrow release initiated...")
+                    time.sleep(3)
                     print(f"""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
