@@ -4,7 +4,7 @@ import random
 import string
 
 user_wallet = {
-    'balance': 99999.00
+    'balance': 9999999.00
 }
 black_market_page_product_category = [
     "Crypto Exchange",
@@ -109,42 +109,86 @@ def black_market_page_crypto_coin():
             bm_crypto_exchange_page_coin_value = [random.uniform(-99999,99999) for _ in range(6)]
             print(f"""
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[CRYPTO EXCHANGE NODE] — SILK CLAW MARKETPLACE v3.1
+     ████ SILK CLAW MARKETPLACE v3.1  ████  [SECURE NODE: ACTIVE]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Status: ACTIVE │ Wallet Integration: ENABLED │ Escrow: SECURED
-Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['crypto_coin']}
-──────────────────────────────────────────────────────────────────────
- ID   │ ITEM/DESCRIPTION                  │ PURCHASE VALUE
-──────┼───────────────────────────────────┼───────────────────────────
- 001  │ 🕱 Shadowcoin (SHC)                │ ${bm_crypto_exchange_page_coin_prices[0]:.2f}
- 002  │ ⚓ Dreadnaught (DNT)              │ ${bm_crypto_exchange_page_coin_prices[1]:.2f}
- 003  │ 🐍 Chimera (CMR)                  │ ${bm_crypto_exchange_page_coin_prices[2]:.2f}
- 004  │ ✴ Aetherium (AET)                 │ ${bm_crypto_exchange_page_coin_prices[3]:.2f}
- 005  │ 🌑 Aphelion (APH)                 │ ${bm_crypto_exchange_page_coin_prices[4]:.2f}
-──────────────────────────────────────────────────────────────────────
+[CRYPTO EXCHANGE NODE] — SILK CLAW MARKETPLACE v3.1
+----------------------------------------------------------------------
+[ WALLET BALANCE ] ${user_wallet['balance']:.2f}
+[ HOLDINGS ] {bag_black_market['crypto_coin']}
+----------------------------------------------------------------------
+[ MARKET OVERVIEW ]
+----------------------------------------------------------------------
+┌───────────────────┬───────────────────┬───────────────────┐
+│     SHADOWCOIN    │    DREADNAUGHT    │       CHIMERA     │
+│      (SHC)        │      (DNT)        │      (CMR)        │
+│-------------------│-------------------│-------------------│
+│ PRICE: ${bm_crypto_exchange_page_coin_prices[0]:.2f}  │ PRICE: ${bm_crypto_exchange_page_coin_prices[1]:.2f}  │ PRICE: ${bm_crypto_exchange_page_coin_prices[2]:.2f}   │
+└───────────────────┴───────────────────┴───────────────────┘
+┌───────────────────┬───────────────────┐
+│      AETHERIUM    │      APHELION     │
+│      (AET)        │      (APH)        │
+│-------------------│-------------------│
+│ PRICE: ${bm_crypto_exchange_page_coin_prices[3]:.2f}  │ PRICE: ${bm_crypto_exchange_page_coin_prices[4]:.2f}  │
+└───────────────────┴───────────────────┘
+----------------------------------------------------------------------
 [1] Purchase Coin
 [2] Dump Coin
-[3] Return to Access Gate """)  
+[3] Return to Access Gate """)
             print("""━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━""")
             black_market_page_crypto_coin_user_input = input('Enter your choice: ')
 
-            if black_market_page_crypto_coin_user_input == '1':
-                 os.system('cls' if os.name == 'nt' else 'clear') 
-                 print("    🔗 Initiating encrypted uplink to the terminal nexus...")
-                 time.sleep(1.5)
-                 print("    🔐 Validating PGP keys and executing secure handshake...")
-                 time.sleep(1.5)
-                 print("    🔄 Synchronizing transaction logs and validating cipher chains...")
-                 time.sleep(1.5)
-                 os.system('cls' if os.name == 'nt' else 'clear') 
-                 print("    🟢 Connection established. Market is online. Stay anonymous.")
-                 time.sleep(2)
+            if len(black_market_page_crypto_coin_user_input.strip()) == 0:
+                  return black_market_page_crypto_coin()
+            elif black_market_page_crypto_coin_user_input == '1':
+                #  print('hey')
+                #  os.system('cls' if os.name == 'nt' else 'clear') 
+                #  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
+                #  time.sleep(1.5)
+                #  print("    🔐 Validating PGP keys and executing secure handshake...")
+                #  time.sleep(1.5)
+                #  print("    🔄 Synchronizing transaction logs and validating cipher chains...")
+                #  time.sleep(1.5)
+                #  os.system('cls' if os.name == 'nt' else 'clear') 
+                #  print("    🟢 Connection established. Market is online. Stay anonymous.")
+                #  time.sleep(2)
                 
                  black_market_page_crypto_coin_purchase_coin_page()
+
+            elif black_market_page_crypto_coin_user_input == '2':
+                #  os.system('cls' if os.name == 'nt' else 'clear') 
+                #  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
+                #  time.sleep(1.5)
+                #  print("    🔐 Validating PGP keys and executing secure handshake...")
+                #  time.sleep(1.5)
+                #  print("    🔄 Synchronizing transaction logs and validating cipher chains...")
+                #  time.sleep(1.5)
+                #  os.system('cls' if os.name == 'nt' else 'clear') 
+                #  print("    🟢 Connection established. Market is online. Stay anonymous.")
+                #  time.sleep(2)
+                 black_market_page_crypto_coin_sell_coin_page()
+            elif black_market_page_crypto_coin_user_input == '3':
+                 return black_market_page()
+            else:
+                  return black_market_page()
 
 def black_market_page_crypto_coin_purchase_coin_page():
             os.system('cls' if os.name=='nt' else 'clear')
             tx_hash = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+            print("""
+██████████████████████████████████████████████████████████████████████
+█                                                                    █
+█  ⬛ SILK CLAW SECURE TRANSACTION PROTOCOL ⬛                       █
+█                                                                    █  
+█  [ENCRYPTED] TOR://v3.onion/secure-payment                         █
+█  [STATUS] AUTHENTICATED | ESCROW ENABLED | SSL 256-BIT             █
+████████████████████████████████████████████████████████████████████ █
+█                                                                    █
+█  ⚠️  ENTER TRANSACTION DETAILS - ALL DATA IS ENCRYPTED  ⚠️           █
+█                                                                    █
+██████████████████████████████████████████████████████████████████████
+""")
+            time.sleep(0.8)
+
             print(f"""
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [CRYPTO EXCHANGE || PURCHASE NODE] — SILK CLAW MARKETPLACE v3.1
@@ -163,24 +207,15 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
 """)
 
 
-            print("""
-██████████████████████████████████████████████████████████████████████
-█                                                                    █
-█  ⬛ SILK CLAW SECURE TRANSACTION PROTOCOL ⬛                       █
-█                                                                    █  
-█  [ENCRYPTED] TOR://v3.onion/secure-payment                         █
-█  [STATUS] AUTHENTICATED | ESCROW ENABLED | SSL 256-BIT             █
-████████████████████████████████████████████████████████████████████ █
-█                                                                    █
-█  ⚠️  ENTER TRANSACTION DETAILS - ALL DATA IS ENCRYPTED  ⚠️          █
-█                                                                    █
-██████████████████████████████████████████████████████████████████████
-""")
+
             black_market_page_crypto_coin_purchase_coin_page_receipt_coinname = input('[INPUT] ⬛ TARGET ASSET ID: ')
             if len(black_market_page_crypto_coin_purchase_coin_page_receipt_coinname.strip()) == 0:
                         black_market_page_crypto_coin_purchase_coin_page()
-            black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity = int(input('[INPUT] 📦 QUANTITY UNITS: '))
-            # print(len(black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity))
+            black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input = input('[INPUT] 📦 QUANTITY UNITS: ')
+            if len(black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input.strip()) == 0:
+                         black_market_page_crypto_coin_purchase_coin_page()
+
+            black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity = int(black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input)
 
             black_market_page_crypto_coin_purchase_coin_page_receipt_coinnconfirmation= input('[CONFIRM] ✅ AUTHORIZE TRANSACTION (Y/N): ')
 
@@ -215,13 +250,13 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                         bag_black_market['crypto_coin'][black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased] += black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
                     else:
                         bag_black_market['crypto_coin'][black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased] = black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
-                    time.sleep(1)
+                    # time.sleep(1)
 
-                    print("\n\n")
-                    print("    ➡️ Executing decentralized transaction. Awaiting block confirmation...")
-                    time.sleep(2)
-                    print("    ✅ Transaction hash generated and validated. Escrow release initiated...")
-                    time.sleep(3)
+                    # print("\n\n")
+                    # print("    ➡️ Executing decentralized transaction. Awaiting block confirmation...")
+                    # time.sleep(2)
+                    # print("    ✅ Transaction hash generated and validated. Escrow release initiated...")
+                    # time.sleep(3)
                     print(f"""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -236,11 +271,13 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
 ──────────────────────────────────────────────────────────────────────
  [ENCRYPTED] ALL DATA ANONYMIZED │ TX IRREVERSIBLE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-""")
+""")                
+                    time.sleep(2)
+                    return black_market_page_crypto_coin()
                 else:
                     print('❌ Transaction failed: Insufficient funds!')
                     time.sleep(2)
-                    return black_market_page_crypto_coin
+                    return black_market_page_crypto_coin()
                 time.sleep(2)
                 return black_market_page_crypto_coin()
             elif black_market_page_crypto_coin_purchase_coin_page_receipt_coinnconfirmation == 'n':
@@ -250,5 +287,44 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
             else:
                  print('❌ Command Unavailable!')
                  time.sleep(2)
-                 return black_market_page()
+                 return black_market_page_crypto_coin()
+            
+
+
+
+
+
+def black_market_page_crypto_coin_sell_coin_page():
+            os.system('cls' if os.name=='nt' else 'clear')
+            tx_hash = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+            print("""
+██████████████████████████████████████████████████████████████████████
+█                                                                    █
+█  🔴 SILK CLAW LIQUIDATION PROTOCOL 🔴                              █
+█                                                                    █  
+█  [ENCRYPTED] TOR://v3.onion/secure-liquidation                     █
+█  [STATUS] AUTHENTICATED | ESCROW ENABLED | SSL 256-BIT             █
+████████████████████████████████████████████████████████████████████ █
+█                                                                    █
+█  ⚠️  ASSET LIQUIDATION - MARKET VALUES FLUCTUATING  ⚠️               █
+█                                                                    █
+██████████████████████████████████████████████████████████████████████
+""")
+            time.sleep(0.8)
+
+            print(f"""
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[CRYPTO LIQUIDATION || DUMP NODE] — SILK CLAW MARKETPLACE v3.1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Status: ACTIVE │ Wallet Integration: ENABLED │ Escrow: SECURED
+Wallet: ${user_wallet['balance']:.2f}        | Inventory: {len(bag_black_market.get('crypto_coin', {}))} assets
+──────────────────────────────────────────────────────────────────────
+ ASSET/DESCRIPTION                 │ QUANTITY │ MARKET STATUS
+──────────────────────────────────────────────────────────────────────
+{bag_black_market['crypto_coin']}
+                  
+                  """)
+
+
+
 black_market_page()
