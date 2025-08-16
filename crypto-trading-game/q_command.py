@@ -412,7 +412,7 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                     return  black_market_page_crypto_coin_sell_coin_page()
                 
             if black_market_page_crypto_coin_purchase_coin_page_receipt_coinnconfirmation.lower() == 'y':
-                if black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity in bag_black_market['crypto_coin'] and black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity <= bag_black_market['crypto_coin'][black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased]:
+                if black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased in bag_black_market['crypto_coin'] and black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity <= bag_black_market['crypto_coin'][black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased]:
                         bag_black_market['crypto_coin'][black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased] += black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
 
                         if bag_black_market['crypto_coin'][black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased]  == 0:
@@ -968,5 +968,6 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
+
 
 
