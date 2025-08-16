@@ -53,19 +53,14 @@ def quick_scene(text, delay):
         sys.stdout.flush()
         time.sleep(delay)
     print()
-# ceo_message = """
-#            ⢀⠤⠐⠲⣦⠀⠀⠀⠐⡍⠥⠂⠀⠀⠀ Thorne:   ⠀⠀⠀⠀⠀              Alright, listen up. The name's Thorne. CEO of this whole damn operation. You're stepping into the arena now, kid,
-# ⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣦⡀⠠⠛⣧⡀⣀⠐⢑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀                       and in this game of crypto, where fortunes are made and lost faster than a blink, you gotta know who's on your side.
-# ⠀⠀⠀⠀⢀⡄⠀⠀⠈⠣⡻⣿⠦⠐⠒⠚⠉⠣⠀⠀⠁⢕⢄⠀⠀⠀⠀⠀⠀⠀                       More importantly, you gotta know who you're dealing with. Every transaction, every trade, every whisper of a coin's 
-# ⠀⡠⡔⠒⠃⢣⢀⣀⠀⢠⢊⠆⠁⠀⠀⠀⢀⠀⠁⠀⠀⠀⠊⡘⠀⠀⠀⠀⠀⠀                       rise or fall... it all comes down to trust. Or the lack thereof.
-# ⢆⠠⠤⠀⠠⣦⣿⣿⣿⣾⣾⣁⡀⣀⡠⠀⢈⣈⡉⠃⠀⢠⡢⣚⡮⢖⢄⠀⠀⠀                       So, before we dive headfirst into this digital gold rush, let's get one thing straight.
-# ⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⡮⠔⣂⠡⣬⣤⣤⣴⣿⣿⣾⠁⠀⠙⢕⣄⠀
-# ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """ #delete the following ceo_message, replace with this after you done
 ceo_message = """
-           yr
-        """
-
-
+           ⢀⠤⠐⠲⣦⠀⠀⠀⠐⡍⠥⠂⠀⠀⠀ Thorne:   ⠀⠀⠀⠀⠀              Alright, listen up. The name's Thorne. CEO of this whole damn operation. You're stepping into the arena now, kid,
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣦⡀⠠⠛⣧⡀⣀⠐⢑⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀                       and in this game of crypto, where fortunes are made and lost faster than a blink, you gotta know who's on your side.
+⠀⠀⠀⠀⢀⡄⠀⠀⠈⠣⡻⣿⠦⠐⠒⠚⠉⠣⠀⠀⠁⢕⢄⠀⠀⠀⠀⠀⠀⠀                       More importantly, you gotta know who you're dealing with. Every transaction, every trade, every whisper of a coin's 
+⠀⡠⡔⠒⠃⢣⢀⣀⠀⢠⢊⠆⠁⠀⠀⠀⢀⠀⠁⠀⠀⠀⠊⡘⠀⠀⠀⠀⠀⠀                       rise or fall... it all comes down to trust. Or the lack thereof.
+⢆⠠⠤⠀⠠⣦⣿⣿⣿⣾⣾⣁⡀⣀⡠⠀⢈⣈⡉⠃⠀⢠⡢⣚⡮⢖⢄⠀⠀⠀                       So, before we dive headfirst into this digital gold rush, let's get one thing straight.
+⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⡮⠔⣂⠡⣬⣤⣤⣴⣿⣿⣾⠁⠀⠙⢕⣄⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """ 
 
 
 
@@ -267,8 +262,8 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
             if len(black_market_page_crypto_coin_purchase_coin_page_receipt_coinname.strip()) == 0:
                         black_market_page_crypto_coin_purchase_coin_page()
             black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input = input('[INPUT] 📦 QUANTITY UNITS: ')
-            if len(black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input.strip()) == 0:
-                         black_market_page_crypto_coin_purchase_coin_page()
+            if not black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input.isdigit():
+                return black_market_page_crypto_coin_purchase_coin_page()
 
             black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity = int(black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input)
 
@@ -387,8 +382,8 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
             if len(black_market_page_crypto_coin_purchase_coin_page_receipt_coinname.strip()) == 0:
                         black_market_page_crypto_coin_sell_coin_page()
             black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input = input('[INPUT] 📦 QUANTITY UNITS: ')
-            if len(black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input.strip()) == 0:
-                         black_market_page_crypto_coin_sell_coin_page()
+            if not black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input.isdigit():
+                return black_market_page_crypto_coin_sell_coin_page()
             black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity = int(black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity_input)
 
             black_market_page_crypto_coin_purchase_coin_page_receipt_coinnconfirmation= input('[CONFIRM] ✅ AUTHORIZE TRANSACTION (Y/N): ')
@@ -503,25 +498,25 @@ def coins_page():
 ┌────────────────────────────┐     ┌────────────────────────────┐     ┌────────────────────────────┐
 │   1. {coin_names[0]}   │     │  2. {coin_names[1]}    │     │  3. {coin_names[2]}      │
 │                            │     |                            │     │                            │
-│      💰 HIGH VALUE                        💎 MID VALUE                       💎 MID VALUE      
+│      🏅 HIGH VALUE                        🥈 MID VALUE                       🥈 MID VALUE      
 │                            │     │                            │     │                            │
 └────────────────────────────┘     └────────────────────────────┘     └────────────────────────────┘
 ┌────────────────────────────┐     ┌────────────────────────────┐     ┌────────────────────────────┐
 │   4. {coin_names[3]}    │     │      5. {coin_names[4]}    │     |  6. {coin_names[5]}   │
 │                            │     |                            │     │                            │
-│      💰 HIGH VALUE                        💰 HIGH VALUE                      💠 LOW VALUE
+│      🏅 HIGH VALUE                        🏅 HIGH VALUE                      🥉 LOW VALUE
 │                            │     │                            │     │                            │
 └────────────────────────────┘     └────────────────────────────┘     └────────────────────────────┘
 ┌────────────────────────────┐     ┌────────────────────────────┐     ┌────────────────────────────┐
 │     7. {coin_names[6]}    │     │    8. {coin_names[7]}    │     |   9. {coin_names[8]}      │
 │                            │     |                            │     │                            │
-│      💠 LOW VALUE                         💎 MID VALUE                       💎 MID VALUE        
+│      🥉 LOW VALUE                         🥈 MID VALUE                       🥈 MID VALUE        
 │                            │     │                            │     │                            │
 └────────────────────────────┘     └────────────────────────────┘     └────────────────────────────┘
 ┌────────────────────────────┐  
 │    10. {coin_names[9]}  │  
 │                            │  
-│      💠 LOW VALUE        
+│      🥉 LOW VALUE        
 │                            │   
 └────────────────────────────┘  
 
@@ -599,7 +594,7 @@ def coins_page_buy_command():
          return coins_page_buy_command()
 
     coin_to_be_purchased_quantity_input = input('📦 QUANITTY UNITS: ')
-    if len(coin_to_be_purchased_quantity_input.strip()) == 0:
+    if not coin_to_be_purchased_quantity_input.isdigit():
          return coins_page_buy_command()
 
     coin_to_be_purchased_quantity = int(coin_to_be_purchased_quantity_input)
@@ -781,7 +776,7 @@ def coins_page_sell_command():
          return coins_page_sell_command()
 
     coin_to_be_purchased_quantity_input = input('📦 QUANITTY UNITS: ')
-    if len(coin_to_be_purchased_quantity_input.strip()) == 0:
+    if not coin_to_be_purchased_quantity_input.isdigit():
          return coins_page_sell_command()
 
     coin_to_be_purchased_quantity = int(coin_to_be_purchased_quantity_input)
@@ -916,7 +911,7 @@ def starting_message():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Loading market data...")
     spinner = '-\\|/'
-    for i in range(2): #CHANGE THIS SHIT BACK TO 100
+    for i in range(100):
                 time.sleep(0.1)  
                 
                 
