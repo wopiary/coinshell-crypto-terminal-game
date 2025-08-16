@@ -457,21 +457,22 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
 
 
 # 'R' COMMAND, BUYING AND SELLING
-def coin_purchase_prices_updates(): 
-      global coin_prices_low_range, coin_prices_mid_range, coin_prices_high_range
-      coin_prices_low_range = [random.uniform(0.01, 5.0) for _ in range(3)]
-      coin_prices_mid_range = [random.uniform(10, 500) for _ in range(4)]
-      coin_prices_high_range = [random.uniform(1001,70000) for _ in range(3)]
       
-coin_purchase_prices_updates()
-
-def coins_sell_prices_updates():
-     global coin_sell_prices_low_range, coin_sell_prices_mid_range, coin_sell_prices_high_range
-     coin_sell_prices_low_range = [round(random.uniform(0.005, 4.8000), 4) for _ in range(3)]
-     coin_sell_prices_mid_range = [round(random.uniform(8.5000, 480.0000), 4) for _ in range(4)]
-     coin_sell_prices_high_range = [round(random.uniform(950.0000, 68000.0000), 4) for _ in range(3)]
-     
-coins_sell_prices_updates()
+def generate_fresh_prices():
+   
+    buy_prices = {
+        'low': [random.uniform(0.01, 5.0) for _ in range(3)],
+        'mid': [random.uniform(10, 500) for _ in range(4)],
+        'high': [random.uniform(1001, 70000) for _ in range(3)]
+    }
+    
+    sell_prices = {
+        'low': [round(random.uniform(0.005, 4.8000), 4) for _ in range(3)],
+        'mid': [round(random.uniform(8.5000, 480.0000), 4) for _ in range(4)],
+        'high': [round(random.uniform(950.0000, 68000.0000), 4) for _ in range(3)]
+    }
+    
+    return buy_prices, sell_prices
 
 
 def coins_page():
@@ -556,6 +557,10 @@ Coin$hell LLC | Member FINRA/SIPC | FDIC Insured | SOX Compliant
 
 def coins_page_buy_command():
     os.system('cls' if os.name=='nt' else 'clear')
+    buy_prices, _ = generate_fresh_prices()
+    coin_prices_low_range = buy_prices['low']
+    coin_prices_mid_range = buy_prices['mid']
+    coin_prices_high_range = buy_prices['high']
     coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)']
 
     print(f"""
@@ -739,6 +744,10 @@ def coins_page_buy_command():
 
 def coins_page_sell_command():
     os.system('cls' if os.name=='nt' else 'clear')
+    _, sell_prices = generate_fresh_prices()
+    coin_sell_prices_low_range = sell_prices['low']
+    coin_sell_prices_mid_range = sell_prices['mid']
+    coin_sell_prices_high_range = sell_prices['high']
     coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)']
     print(f"""
 ██████████████████████████████████████████████████████████████████████████████
@@ -957,3 +966,4 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
+
