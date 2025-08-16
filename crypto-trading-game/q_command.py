@@ -78,6 +78,8 @@ def users_name_info():
 def black_market_page_generate_key(length =6):
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
 
+def generate_fresh_black_market_prices():
+    return [random.uniform(5000, 99999) for _ in range(5)]
 
 def black_market_page():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -156,7 +158,7 @@ def black_market_page_crypto_coin():
 
             os.system('cls' if os.name=='nt' else 'clear')
             global  bm_crypto_exchange_page_coin_prices
-
+            bm_crypto_exchange_page_coin_prices = generate_fresh_black_market_prices()
             print(f"""
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      ████ SILK CLAW MARKETPLACE v3.1  ████  [SECURE NODE: ACTIVE]
@@ -966,4 +968,5 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
+
 
