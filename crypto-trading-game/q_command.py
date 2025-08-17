@@ -10,7 +10,7 @@ from datetime import datetime
 
 #GLOBAL
 user_wallet = {
-       'balance': 1000.00
+       'balance': 1000.00 
 }
 Name = None
 
@@ -19,12 +19,13 @@ bag = {
 }
 black_market_page_product_category = [
     "Crypto Exchange",
-    "Compromised Coinshell Accounts",
+    "Compromised Coin$hell Accounts",
     "Misc. Black Market Goods",
     "Exit Silk Claw"
 ]
 bag_black_market = {
-      'crypto_coin' : []
+      'crypto_coin' : [],
+      'compromised_accounts' : []
 }
 
 global  bm_crypto_exchange_page_coin_prices, bm_crypto_exchange_page_coin_names, bm_crypto_exchange_page_coin_value
@@ -35,14 +36,14 @@ bm_crypto_exchange_page_coin_names = [
             "✴ Aetherium (AET)",
             "🌑 Aphelion (APH)"
         ]
-bm_crypto_exchange_page_coin_prices = [random.uniform(5000,99999) for _ in range(6)]
-bm_crypto_exchange_page_coin_value = [random.uniform(-99999,99999) for _ in range(6)]
+
 
 global session_code_first_num, session_code_second_num,session_code_letters,account_num
 session_code_first_num = random.randint(1,9)
 session_code_second_num = random.randint(10,99)
 session_code_letters = ''.join(random.choices(string.ascii_uppercase, k=3))
 account_num = random.randint(1000,9999)
+
 
 
 #QUICKSCENE, THORNE NTRODUCES HIMSELF TO THE PLAYER AND ASK FOR NAME
@@ -60,7 +61,10 @@ ceo_message = """
 ⠀⡠⡔⠒⠃⢣⢀⣀⠀⢠⢊⠆⠁⠀⠀⠀⢀⠀⠁⠀⠀⠀⠊⡘⠀⠀⠀⠀⠀⠀                       rise or fall... it all comes down to trust. Or the lack thereof.
 ⢆⠠⠤⠀⠠⣦⣿⣿⣿⣾⣾⣁⡀⣀⡠⠀⢈⣈⡉⠃⠀⢠⡢⣚⡮⢖⢄⠀⠀⠀                       So, before we dive headfirst into this digital gold rush, let's get one thing straight.
 ⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⡮⠔⣂⠡⣬⣤⣤⣴⣿⣿⣾⠁⠀⠙⢕⣄⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """ 
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """ #delete the following ceo_message, replace with this after you done
+
+
+
 
 
 
@@ -86,7 +90,7 @@ def black_market_page():
     global session_code_first_num, session_code_letters, session_code_second_num, sections
     
     
-    # Spooky loading effect
+
     print("    🌐 Initiating secure connection to darknet terminal...")
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear') 
@@ -159,6 +163,7 @@ def black_market_page_crypto_coin():
             os.system('cls' if os.name=='nt' else 'clear')
             global  bm_crypto_exchange_page_coin_prices
             bm_crypto_exchange_page_coin_prices = generate_fresh_black_market_prices()
+
             print(f"""
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      ████ SILK CLAW MARKETPLACE v3.1  ████  [SECURE NODE: ACTIVE]
@@ -166,7 +171,8 @@ def black_market_page_crypto_coin():
 [CRYPTO EXCHANGE NODE] — SILK CLAW MARKETPLACE v3.1
 ----------------------------------------------------------------------
 [ WALLET BALANCE ] : ${user_wallet['balance']:.2f}
-[ HOLDINGS ] : {bag_black_market['crypto_coin']}
+[ HOLDINGS ] : Crypto Coins:{bag_black_market['crypto_coin']}
+               Compromised Accounts:{bag_black_market['compromised_accounts']}
 ----------------------------------------------------------------------
 [ MARKET OVERVIEW ]
 ----------------------------------------------------------------------
@@ -219,7 +225,7 @@ def black_market_page_crypto_coin():
                  time.sleep(2)
                  black_market_page_crypto_coin_sell_coin_page()
             elif black_market_page_crypto_coin_user_input == '3':
-                 return 'back'
+                 return black_market_page()
             else:
                   return black_market_page()
 
@@ -276,16 +282,16 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                     total = bm_crypto_exchange_page_coin_prices[0] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
                     black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased = '🕱 Shadowcoin (SHC)'
                 elif black_market_page_crypto_coin_purchase_coin_page_receipt_coinname == '002':
-                    total = bm_crypto_exchange_page_coin_prices[0] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
+                    total = bm_crypto_exchange_page_coin_prices[1] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
                     black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased = '⚓ Dreadnaught (DNT)'
                 elif black_market_page_crypto_coin_purchase_coin_page_receipt_coinname == '003':
-                    total = bm_crypto_exchange_page_coin_prices[0] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
+                    total = bm_crypto_exchange_page_coin_prices[2] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
                     black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased = '🐍 Chimera (CMR)'
                 elif black_market_page_crypto_coin_purchase_coin_page_receipt_coinname == '004':
-                    total = bm_crypto_exchange_page_coin_prices[0] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
+                    total = bm_crypto_exchange_page_coin_prices[3] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
                     black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased = '✴ Aetherium (AET)'
                 elif black_market_page_crypto_coin_purchase_coin_page_receipt_coinname == '005':
-                    total = bm_crypto_exchange_page_coin_prices[0] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
+                    total = bm_crypto_exchange_page_coin_prices[4] * black_market_page_crypto_coin_purchase_coin_page_receipt_coinquantity
                     black_market_page_crypto_coin_purchase_coin_page_receipt_coinname_purchased = '🌑 Aphelion (APH)'
                 else:
                     print('\n❌ Product Unavailable!')
@@ -330,8 +336,6 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                     print('❌ Transaction failed: Insufficient funds!')
                     time.sleep(2)
                     return black_market_page_crypto_coin()
-                time.sleep(2)
-                return black_market_page_crypto_coin()
             elif black_market_page_crypto_coin_purchase_coin_page_receipt_coinnconfirmation == 'n':
                  print('❌ Transaction cancelled!')
                  time.sleep(2)
@@ -341,7 +345,6 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                  time.sleep(2)
                  return black_market_page_crypto_coin()
             
-
 
 
 
@@ -459,6 +462,7 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
 
 
 # 'R' COMMAND, BUYING AND SELLING
+
       
 def generate_fresh_prices():
    
@@ -475,7 +479,6 @@ def generate_fresh_prices():
     }
     
     return buy_prices, sell_prices
-
 
 def coins_page():
     global user_wallet
@@ -523,8 +526,8 @@ def coins_page():
 │                            │   
 └────────────────────────────┘  
 
-\n💼 Portfolio Balance: ${user_wallet['balance']:.2f}   ||  🔒 Account Status: VERIFIED ✓
-📊 Market Cap: ${marketcap_projection:.2f}{orders_of_magnitude}   ||  ⚡ Current Market Trading Volume: ${tradingvol_projection:.2f}
+\n💼 Wallet Balance: ${user_wallet['balance']:.2f}     ||     🔒 Account Status: VERIFIED ✓
+📊 Market Cap: ${marketcap_projection:.2f}{orders_of_magnitude}     ||     ⚡ Current Market Trading Volume: ${tradingvol_projection:.2f}
 🎒 Inventory: {bag['coins_owned']}
 """) 
     
@@ -596,7 +599,7 @@ def coins_page_buy_command():
 ╚════════════╩═══════════════════════════════════════════════════════════════╝
 \n💼 Portfolio Balance: ${user_wallet['balance']:.2f}       🎒 Inventory: {bag['coins_owned']}
 """)
-    coin_to_be_purchased_name = input('🪙  TARGET ASSET ID: ') #FIX THIS MAKE SURE THAT IF THE INPUT STATEMTNS AT EMPTY IT WOULD CIRCLE BACK TO THE DEF
+    coin_to_be_purchased_name = input('🪙  TARGET ASSET ID: ')
     if len(coin_to_be_purchased_name.strip()) == 0:
          return coins_page_buy_command()
 
@@ -611,77 +614,37 @@ def coins_page_buy_command():
     coin_name = ''
 
     if coin_to_be_purchased_name == '1':
-        if coin_prices_high_range[0] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_high_range[0] * coin_to_be_purchased_quantity
         coin_name = 'ByteBucks'
     elif coin_to_be_purchased_name == '2':
-        if coin_prices_mid_range[1] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_mid_range[1] * coin_to_be_purchased_quantity
         coin_name = "LunaMint"
     elif coin_to_be_purchased_name == '3':
-        if coin_prices_mid_range[0] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_mid_range[0] * coin_to_be_purchased_quantity
         coin_name = "Vironix"
     elif coin_to_be_purchased_name == '4':
-        if coin_prices_high_range[1] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_high_range[1] * coin_to_be_purchased_quantity
         coin_name = "HexaFuel"
     elif coin_to_be_purchased_name == '5':
-        if coin_prices_high_range[2] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_high_range[2] * coin_to_be_purchased_quantity
         coin_name = "OpalX"
     elif coin_to_be_purchased_name == '6':
-        if coin_prices_low_range[1] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_low_range[1] * coin_to_be_purchased_quantity
         coin_name = "TerraGreem"
     elif coin_to_be_purchased_name == '7':
-        if coin_prices_low_range[2] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_low_range[2] * coin_to_be_purchased_quantity
         coin_name = "Lumina"
     elif coin_to_be_purchased_name == '8':
-        if coin_prices_mid_range[3] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_mid_range[3] * coin_to_be_purchased_quantity
         coin_name = "Gearcoin"
     elif coin_to_be_purchased_name == '9':
-        if coin_prices_mid_range[2] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_mid_range[2] * coin_to_be_purchased_quantity
         coin_name = "Cosmic"
     elif coin_to_be_purchased_name == '10':
-        if coin_prices_low_range[0] <= 0:
-            print('❌ Transaction failed: Cannot buy a coin with a value of $0 or less.')
-            time.sleep(2)
-            return
         total = coin_prices_low_range[0] * coin_to_be_purchased_quantity
         coin_name = "Voltflux"
     else:
-        print("\n❌ Invalid coin selection!")
+        print("❌ Invalid coin selection!")
         time.sleep(2)
         return coins_page()
 
@@ -698,16 +661,15 @@ def coins_page_buy_command():
             time.sleep(1)
             os.system('cls' if os.name=='nt' else 'clear')
             print("\n\n")
-            print("    ➡️ Processing digital asset order - pending network settlement confirmation...")
-            time.sleep(2)
+            print("    ➡️  Processing digital asset order - pending network settlement confirmation...")
+            time.sleep(1)
             print("    ✅ Settlement reference issued in verified - custodial release in progress...")
-            time.sleep(3)
+            time.sleep(1)
             print(f"""
 ╔══════════════════════════════════════════════════════════╗
 ║ 💳  OFFICIAL TRANSACTION RECEIPT                         ║
 ╠══════════════════════════════════════════════════════════╣
-║ 📅 DATE & TIME   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}                   ║
-║ 🆔 TRANSACTION ID:  CHANGE THISSS                        ║
+║ 📅 DATE & TIME   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}                                
 ╠══════════════════════════════════════════════════════════╣
 ║ 💰 ASSET NAME    : {coin_to_be_purchased_name:<34}       
 ║ 📦 QUANTITY      : {coin_to_be_purchased_quantity:<34}   
@@ -724,7 +686,6 @@ def coins_page_buy_command():
 """)
             time.sleep(3)
             return coins_page()
-            # print('return to coins page ni sya')
         else:
             print('❌ Transaction failed: Insufficient funds!')
             time.sleep(2)
@@ -782,7 +743,7 @@ def coins_page_sell_command():
 ╚════════════╩═══════════════════════════════════════════════════════════════╝
 \n💼 Portfolio Balance: ${user_wallet['balance']:.2f}       🎒 Inventory: {bag['coins_owned']}
 """)
-    coin_to_be_purchased_name = input('🪙  TARGET ASSET ID: ') #FIX THIS MAKE SURE THAT IF THE INPUT STATEMTNS AT EMPTY IT WOULD CIRCLE BACK TO THE DEF
+    coin_to_be_purchased_name = input('🪙  TARGET ASSET ID: ')
     if len(coin_to_be_purchased_name.strip()) == 0:
          return coins_page_sell_command()
 
@@ -827,7 +788,7 @@ def coins_page_sell_command():
         total = coin_sell_prices_low_range[0] * coin_to_be_purchased_quantity
         coin_name = "Voltflux"
     else:
-        print("\n❌ Invalid coin selection!")
+        print("❌ Invalid coin selection!")
         time.sleep(2)
         return coins_page()
 
@@ -842,16 +803,15 @@ def coins_page_sell_command():
             time.sleep(1)
             os.system('cls' if os.name=='nt' else 'clear')
             print("\n\n")
-            print("    ➡️ Initiating blockchain consensus protocol - awaiting validator signatures...")
-            time.sleep(2)
+            print("    ➡️  Initiating blockchain consensus protocol - awaiting validator signatures...")
+            time.sleep(1)
             print("    ✅ Consensus achieved - smart contract execution and asset transfer authorized...")
-            time.sleep(3)
+            time.sleep(1)
             print(f"""
     ╔══════════════════════════════════════════════════════════╗
     ║ 💳  OFFICIAL TRANSACTION RECEIPT                         ║
     ╠══════════════════════════════════════════════════════════╣
-    ║ 📅 DATE & TIME   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}                   ║
-    ║ 🆔 TRANSACTION ID:  CHANGE THISSS                        ║
+    ║ 📅 DATE & TIME   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}                                   
     ╠══════════════════════════════════════════════════════════╣
     ║ 💰 ASSET NAME    : {coin_to_be_purchased_name:<34}       
     ║ 📦 QUANTITY      : {coin_to_be_purchased_quantity:<34}   
@@ -907,9 +867,9 @@ def starting_message():
                                                                           Ready to dive into the wild world of crypto trading?
                                                                                     Here's what you need to know:
 
-                                                                                    💵 Starting Balance: $100
-                                                                                   💹 Market is LIVE and volatile
-                                                                                  ⌚ Every second counts in crypto!
+                                                                                    💵 Starting Balance: $1000
+                                                                                  💹 Market is LIVE and volatile
+                                                                                 ⌚ Every second counts in crypto!
 
                                                                        Trade smart, trade fast, and may the profits be with you!"""
     )
@@ -968,6 +928,3 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
-
-
-
