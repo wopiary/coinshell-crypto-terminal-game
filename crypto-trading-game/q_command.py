@@ -198,7 +198,6 @@ def black_market_page_crypto_coin():
             if len(black_market_page_crypto_coin_user_input.strip()) == 0:
                   return black_market_page_crypto_coin()
             elif black_market_page_crypto_coin_user_input == '1':
-                 print('hey')
                  os.system('cls' if os.name == 'nt' else 'clear') 
                  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
                  time.sleep(1.5)
@@ -928,4 +927,5 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
+
 
