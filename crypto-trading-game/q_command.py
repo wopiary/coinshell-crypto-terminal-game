@@ -91,17 +91,17 @@ def black_market_page():
     
     
 
-    # print("    🌐 Initiating secure connection to darknet terminal...")
-    # time.sleep(2)
-    # os.system('cls' if os.name == 'nt' else 'clear') 
-    # print("    🔐 Authenticating user credentials...")
-    # time.sleep(2)
-    # os.system('cls' if os.name == 'nt' else 'clear')
-    # print("    👁️  Synchronizing with decentralized nodes...")
-    # time.sleep(1.5)
-    # os.system('cls' if os.name == 'nt' else 'clear')
+    print("    🌐 Initiating secure connection to darknet terminal...")
+    time.sleep(2)
+    os.system('cls' if os.name == 'nt' else 'clear') 
+    print("    🔐 Authenticating user credentials...")
+    time.sleep(2)
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("    👁️  Synchronizing with decentralized nodes...")
+    time.sleep(1.5)
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-    # print("    ⚡ Connection established. Welcome to the Market!")
+    print("    ⚡ Connection established. Welcome to the Market!")
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -1204,6 +1204,7 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
+
 
 
 
