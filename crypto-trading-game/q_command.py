@@ -8,7 +8,7 @@ import line_graph
 import string
 from datetime import datetime
 
-#GLOBAL
+#GLOBAL VARIABLES
 user_wallet = {
        'balance': 1000.00 
 }
@@ -79,7 +79,7 @@ def users_name_info():
 
 
 
-# 'B' COMMAND
+# 'B' COMMAND, BLACK MARKET BUYING AND SELLING
 def black_market_page_generate_key(length =6):
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
 
@@ -227,7 +227,9 @@ def black_market_page_crypto_coin():
             elif black_market_page_crypto_coin_user_input == '3':
                  return black_market_page()
             else:
-                  return black_market_page()
+                  return black_market_page_crypto_coin()
+
+
 
 def black_market_page_crypto_coin_purchase_coin_page():
             os.system('cls' if os.name=='nt' else 'clear')
@@ -344,8 +346,6 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                  print('❌ Command Unavailable!')
                  time.sleep(2)
                  return black_market_page_crypto_coin()
-            
-
 
 
 
@@ -468,19 +468,12 @@ compromised_accounts_usn_masterlist =  [
     "Shadow0ps", "GhostWalk", "bloodCoin", "viperByte", "noScopeTrader",
     "hodl4lyfe", "moonMission", "satoshiWannabe", "bags4days", "pepecoin"
     ]
-
-
 session_code_first_num = random.randint(1,9)
 session_code_second_num = random.randint(10,99)
 session_code_letters = ''.join(random.choices(string.ascii_uppercase, k=3))
 account_num = random.randint(1000,9999)
-
-
 for accounts_username in compromised_accounts_usn_masterlist:
     print(accounts_username)
-
-
-
 compromised_accounts_usn_masterlist =  [
     "byteBandit", "rootkitRider", "nullPointer", "stackSmash", "hexDealer",
     "bullRun77", "paperHands69", "marginCallMe", "diamondPaws", "shortKing",
@@ -542,12 +535,13 @@ def black_market_page_compromised_accounts():
                  os.system('cls' if os.name == 'nt' else 'clear') 
                  print("    🟢 Connection established. Market is online. Stay anonymous.")
                  time.sleep(2)
-                 black_market_page_compromised_accounts()
+                 black_market_page_crypto_coin_sell_coin_page()
 
     elif black_market_page_compromised_account_user_input == '3':
-                 return 'back'
+                 return black_market_page()
     else:
-                print("return black_market_page()")
+                black_market_page_compromised_accounts()
+
 
 
 def black_market_page_compromised_accounts_purchase_page():
@@ -642,6 +636,98 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: Crypto Coins:{bag_blac
                  print('❌ Command Unavailable!')
                  time.sleep(2)
                  return black_market_page_compromised_accounts()
+
+
+
+def black_market_page_compromised_accounts_drain_page():
+      os.system('cls' if os.name=='nt' else 'clear')
+      tx_hash = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+      account_names_list = list(bag_black_market['compromised_accounts'].keys())
+      compromised_accounts_selling_price = [random.uniform(500, 20000) for _ in range(len(account_names_list))]
+
+      print(f"""
+██████████████████████████████████████████████████████████████████████
+█                                                                    █
+█  🔴 SILK CLAW ACCOUNT DRAINER v2.3 🔴                              █
+█                                                                    █  
+█  [ENCRYPTED] TOR://v3.onion/account-access                         █
+█  [STATUS] AUTHENTICATED | PROXY CHAIN ACTIVE | VPN MASKED          █
+████████████████████████████████████████████████████████████████████ █
+█                                                                    █
+█  ⚠️  COMPROMISED ACCOUNT EXPLOITATION PANEL  ⚠️                     █
+█                                                                    █
+██████████████████████████████████████████████████████████████████████
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[COMPROMISED ACCOUNT EXCHANGE|| EXPLOITATION NODE] — SILK CLAW MARKETPLACE v3.1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Status: ACTIVE │ Proxy: ENABLED | Exploitation Tools: LOADED
+Wallet: ${user_wallet['balance']:.2f} | Inventory: Crypto Coins:{bag_black_market['crypto_coin']}
+                                        Compromised Accounts:{bag_black_market['compromised_accounts']}
+──────────────────────────────────────────────────────────────────────
+ID    │ ITEM/DESCRIPTION                  │ AVAILABLE BALANCE
+──────┼───────────────────────────────────┼───────────────────────────""")
+      for num, account_name in enumerate(account_names_list, start=1):
+           print(f'{num:2}      {account_name:2}                           {'$ [REDACTED]'}')
+
+      print('\n')
+      black_market_page_compromised_account_purchase_coin_page_receipt_coinname = input('[INPUT] ⬛ TARGET ASSET ID: ')
+      if len(black_market_page_compromised_account_purchase_coin_page_receipt_coinname.strip()) == 0:
+                        return black_market_page_compromised_accounts_drain_page()
+      black_market_page_compromised_account_purchase_coin_page_receipt_coinnconfirmation= input('[CONFIRM] ✅ AUTHORIZE TRANSACTION (Y/N): ').strip().lower()
+      black_market_page_compromised_account_purchase_coin_page_receipt_coinquantity = 1
+
+      try:
+        black_market_page_compromised_account_purchase_coin_page_receipt_coinname_choice = int(black_market_page_compromised_account_purchase_coin_page_receipt_coinname) - 1
+      except ValueError:
+        print('❌ Transaction failed: Coins Not in Inventory!')
+        time.sleep(2)
+        return black_market_page_compromised_accounts_drain_page()
+      match black_market_page_compromised_account_purchase_coin_page_receipt_coinnconfirmation:
+              case 'y':     
+                    
+                        if 0 <= black_market_page_compromised_account_purchase_coin_page_receipt_coinname_choice < len(account_names_list):
+                            black_market_page_compromised_account_purchase_coin_page_receipt_coinname_selected_choice = account_names_list[black_market_page_compromised_account_purchase_coin_page_receipt_coinname_choice]
+                            total = compromised_accounts_selling_price[black_market_page_compromised_account_purchase_coin_page_receipt_coinname_choice]
+                            user_wallet['balance'] += total
+                            del bag_black_market['compromised_accounts'][black_market_page_compromised_account_purchase_coin_page_receipt_coinname_selected_choice]
+                            print("\n\n")
+                            print("    ➡️ Executing decentralized transaction. Awaiting block confirmation...")
+                            time.sleep(2)
+                            print("    ✅ Transaction hash generated and validated. Escrow release initiated...")
+                            time.sleep(3)
+                                    
+
+                                    
+                            print(f"""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ ████  SILK CLAW TRANSACTION RECEIPT  ████   [TX: CONFIRMED]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Session: {session_code_first_num}{session_code_letters}-{session_code_second_num} │ Hash: {tx_hash}
+ Node: SECURE │ Protocol: ONION://v3 │ Status: COMPLETE
+──────────────────────────────────────────────────────────────────────
+ Operation: Crypto Exchange    │ Asset: {black_market_page_compromised_account_purchase_coin_page_receipt_coinname}
+ Value: ${total:.2f}
+ Wallet Balance: ${user_wallet['balance']:.2f}       │ Escrow: RELEASED
+──────────────────────────────────────────────────────────────────────
+ [ENCRYPTED] ALL DATA ANONYMIZED │ TX IRREVERSIBLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+""")                 
+                            time.sleep(3)
+                            return black_market_page_compromised_accounts()
+                        else:
+                            print('❌ Transaction failed: Coins Not in Inventory!')
+                            time.sleep(2)
+                            return black_market_page_compromised_accounts_drain_page()
+              case 'n':
+                    print('❌ Order Canceled!')
+                    time.sleep(2)
+                    return black_market_page_compromised_accounts()
+
+              case _:
+                    print('❌ Command Unavailable!')
+                    time.sleep(2)
+                    return black_market_page_compromised_accounts()
 
 
 
@@ -1114,6 +1200,7 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
+
 
 
 
