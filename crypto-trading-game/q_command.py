@@ -10,7 +10,7 @@ from datetime import datetime
 
 #GLOBAL VARIABLES
 user_wallet = {
-       'balance': 1000.00 
+       'balance': 1000.00  
 }
 Name = None
 
@@ -66,7 +66,6 @@ ceo_message = """
 ⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿⡮⠔⣂⠡⣬⣤⣤⣴⣿⣿⣾⠁⠀⠙⢕⣄⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠓⠀⢊⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠁⠵                        """
 
-
 def users_name_info():
     global Name
     user_name = input("""       
@@ -92,17 +91,17 @@ def black_market_page():
     
     
 
-    print("    🌐 Initiating secure connection to darknet terminal...")
-    time.sleep(2)
-    os.system('cls' if os.name == 'nt' else 'clear') 
-    print("    🔐 Authenticating user credentials...")
-    time.sleep(2)
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print("    👁️  Synchronizing with decentralized nodes...")
-    time.sleep(1.5)
-    os.system('cls' if os.name == 'nt' else 'clear')
+    # print("    🌐 Initiating secure connection to darknet terminal...")
+    # time.sleep(2)
+    # os.system('cls' if os.name == 'nt' else 'clear') 
+    # print("    🔐 Authenticating user credentials...")
+    # time.sleep(2)
+    # os.system('cls' if os.name == 'nt' else 'clear')
+    # print("    👁️  Synchronizing with decentralized nodes...")
+    # time.sleep(1.5)
+    # os.system('cls' if os.name == 'nt' else 'clear')
 
-    print("    ⚡ Connection established. Welcome to the Market!")
+    # print("    ⚡ Connection established. Welcome to the Market!")
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -148,6 +147,9 @@ Enter Access Key to Proceed:
 
     if section == 'Crypto Exchange':
         black_market_page_crypto_coin()
+
+    elif section == 'Compromised Coin$hell Accounts':
+        black_market_page_compromised_accounts()
 
     elif section =='Exit Silk Claw':
          return 'back'
@@ -199,30 +201,30 @@ def black_market_page_crypto_coin():
             if len(black_market_page_crypto_coin_user_input.strip()) == 0:
                   return black_market_page_crypto_coin()
             elif black_market_page_crypto_coin_user_input == '1':
-                 os.system('cls' if os.name == 'nt' else 'clear') 
-                 print("    🔗 Initiating encrypted uplink to the terminal nexus...")
-                 time.sleep(1.5)
-                 print("    🔐 Validating PGP keys and executing secure handshake...")
-                 time.sleep(1.5)
-                 print("    🔄 Synchronizing transaction logs and validating cipher chains...")
-                 time.sleep(1.5)
-                 os.system('cls' if os.name == 'nt' else 'clear') 
-                 print("    🟢 Connection established. Market is online. Stay anonymous.")
-                 time.sleep(2)
+                #  os.system('cls' if os.name == 'nt' else 'clear') 
+                #  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
+                #  time.sleep(1.5)
+                #  print("    🔐 Validating PGP keys and executing secure handshake...")
+                #  time.sleep(1.5)
+                #  print("    🔄 Synchronizing transaction logs and validating cipher chains...")
+                #  time.sleep(1.5)
+                #  os.system('cls' if os.name == 'nt' else 'clear') 
+                #  print("    🟢 Connection established. Market is online. Stay anonymous.")
+                #  time.sleep(2)
                 
                  black_market_page_crypto_coin_purchase_coin_page()
 
             elif black_market_page_crypto_coin_user_input == '2':
-                 os.system('cls' if os.name == 'nt' else 'clear') 
-                 print("    🔗 Initiating encrypted uplink to the terminal nexus...")
-                 time.sleep(1.5)
-                 print("    🔐 Validating PGP keys and executing secure handshake...")
-                 time.sleep(1.5)
-                 print("    🔄 Synchronizing transaction logs and validating cipher chains...")
-                 time.sleep(1.5)
-                 os.system('cls' if os.name == 'nt' else 'clear') 
-                 print("    🟢 Connection established. Market is online. Stay anonymous.")
-                 time.sleep(2)
+                #  os.system('cls' if os.name == 'nt' else 'clear') 
+                #  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
+                #  time.sleep(1.5)
+                #  print("    🔐 Validating PGP keys and executing secure handshake...")
+                #  time.sleep(1.5)
+                #  print("    🔄 Synchronizing transaction logs and validating cipher chains...")
+                #  time.sleep(1.5)
+                #  os.system('cls' if os.name == 'nt' else 'clear') 
+                #  print("    🟢 Connection established. Market is online. Stay anonymous.")
+                #  time.sleep(2)
                  black_market_page_crypto_coin_sell_coin_page()
             elif black_market_page_crypto_coin_user_input == '3':
                  return black_market_page()
@@ -313,9 +315,9 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                     time.sleep(1)
 
                     print("\n\n")
-                    print("    ➡️ Executing decentralized transaction. Awaiting block confirmation...")
+                    print("➡️  Executing decentralized transaction. Awaiting block confirmation...")
                     time.sleep(2)
-                    print("    ✅ Transaction hash generated and validated. Escrow release initiated...")
+                    print("✅ Transaction hash generated and validated. Escrow release initiated...")
                     time.sleep(3)
                     print(f"""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -335,15 +337,15 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                     time.sleep(3)
                     return black_market_page_crypto_coin()
                 else:
-                    print('❌ Transaction failed: Insufficient funds!')
+                    print('\n❌ Transaction failed: Insufficient funds!')
                     time.sleep(2)
                     return black_market_page_crypto_coin()
             elif black_market_page_crypto_coin_purchase_coin_page_receipt_coinnconfirmation == 'n':
-                 print('❌ Transaction cancelled!')
+                 print('\n❌ Transaction cancelled!')
                  time.sleep(2)
                  return black_market_page_crypto_coin()
             else:
-                 print('❌ Command Unavailable!')
+                 print('\n❌ Command Unavailable!')
                  time.sleep(2)
                  return black_market_page_crypto_coin()
 
@@ -424,9 +426,9 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                         user_wallet['balance'] += total
 
                         print("\n\n")
-                        print("    ➡️ Executing decentralized transaction. Awaiting block confirmation...")
+                        print("➡️  Executing decentralized transaction. Awaiting block confirmation...")
                         time.sleep(2)
-                        print("    ✅ Transaction hash generated and validated. Escrow release initiated...")
+                        print("✅ Transaction hash generated and validated. Escrow release initiated...")
                         time.sleep(3)
                         print(f"""
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -447,16 +449,16 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: {bag_black_market['cry
                         return black_market_page_crypto_coin()
 
                 else:
-                    print('❌ Transaction failed: Coins Not in Inventory!')
+                    print('\n❌ Transaction failed: Coins Not in Inventory!')
                     time.sleep(2)
                     return black_market_page_crypto_coin()
             elif black_market_page_crypto_coin_purchase_coin_page_receipt_coinnconfirmation == 'n':
-                 print('❌ Transaction cancelled!')
+                 print('\n❌ Transaction cancelled!')
                  time.sleep(2)
                  return black_market_page_crypto_coin()
 
             else:
-                 print('❌ Command Unavailable!')
+                 print('\n❌ Command Unavailable!')
                  time.sleep(2)
                  return black_market_page_crypto_coin()
 
@@ -511,7 +513,6 @@ def black_market_page_compromised_accounts():
     if len(black_market_page_compromised_account_user_input.strip()) == 0:
             return black_market_page_compromised_accounts()
     elif black_market_page_compromised_account_user_input == '1':
-                
                  os.system('cls' if os.name == 'nt' else 'clear') 
                  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
                  time.sleep(1.5)
@@ -535,7 +536,8 @@ def black_market_page_compromised_accounts():
                  os.system('cls' if os.name == 'nt' else 'clear') 
                  print("    🟢 Connection established. Market is online. Stay anonymous.")
                  time.sleep(2)
-                 black_market_page_crypto_coin_sell_coin_page()
+
+                 black_market_page_compromised_accounts_drain_page()
 
     elif black_market_page_compromised_account_user_input == '3':
                  return black_market_page()
@@ -563,12 +565,12 @@ def black_market_page_compromised_accounts_purchase_page():
 """)
     time.sleep(0.8)
     print(f"""
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[COMPROMISED ACCOUNT EXCHANGE || PURCHASE NODE] — SILK CLAW MARKETPLACE v3.1
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Status: ACTIVE │ Wallet Integration: ENABLED │ Escrow: SECURED
-Wallet: ${user_wallet['balance']:.2f}        | Inventory: Crypto Coins:{bag_black_market['crypto_coin']}
-                                        Compromised Accounts:{bag_black_market['compromised_accounts']}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[COMPROMISED ACCOUNT EXCHANGE|| EXPLOITATION NODE] — SILK CLAW MARKETPLACE v3.1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Status: ACTIVE │ Proxy: ENABLED | Exploitation Tools: LOADED
+Wallet: ${user_wallet['balance']:.2f} | Inventory: Crypto Coins:{bag_black_market['crypto_coin']}
+            Compromised Accounts:{bag_black_market['compromised_accounts']}
 ──────────────────────────────────────────────────────────────────────
  ID   │ ITEM/DESCRIPTION                  │ PURCHASE VALUE
 ──────┼───────────────────────────────────┼───────────────────────────""")
@@ -605,9 +607,9 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: Crypto Coins:{bag_blac
                     compromised_accounts_usn_masterlist.pop(compromised_account_index)
                     compromised_accounts_price.pop(compromised_account_index)
                     print("\n\n")
-                    print("    ➡️ Executing decentralized transaction. Awaiting block confirmation...")
+                    print("➡️  Executing decentralized transaction. Awaiting block confirmation...")
                     time.sleep(2)
-                    print("    ✅ Transaction hash generated and validated. Escrow release initiated...")
+                    print("✅ Transaction hash generated and validated. Escrow release initiated...")
                     time.sleep(3)
         
                     print(f"""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -626,14 +628,16 @@ Wallet: ${user_wallet['balance']:.2f}        | Inventory: Crypto Coins:{bag_blac
 """)                
                     time.sleep(3)
                     return black_market_page_compromised_accounts()
-
-
+                 else:
+                    print('\n❌ Transaction failed: Insufficient funds!')
+                    time.sleep(2)
+                    return black_market_page_compromised_accounts_purchase_page()
            case 'n':    
-                 print('❌ Transaction cancelled!')
+                 print('\n❌ Transaction cancelled!')
                  time.sleep(2) 
                  return black_market_page_compromised_accounts()
            case _:
-                 print('❌ Command Unavailable!')
+                 print('\n❌ Command Unavailable!')
                  time.sleep(2)
                  return black_market_page_compromised_accounts()
 
@@ -663,7 +667,7 @@ def black_market_page_compromised_accounts_drain_page():
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Status: ACTIVE │ Proxy: ENABLED | Exploitation Tools: LOADED
 Wallet: ${user_wallet['balance']:.2f} | Inventory: Crypto Coins:{bag_black_market['crypto_coin']}
-                                        Compromised Accounts:{bag_black_market['compromised_accounts']}
+            Compromised Accounts:{bag_black_market['compromised_accounts']}
 ──────────────────────────────────────────────────────────────────────
 ID    │ ITEM/DESCRIPTION                  │ AVAILABLE BALANCE
 ──────┼───────────────────────────────────┼───────────────────────────""")
@@ -680,7 +684,7 @@ ID    │ ITEM/DESCRIPTION                  │ AVAILABLE BALANCE
       try:
         black_market_page_compromised_account_purchase_coin_page_receipt_coinname_choice = int(black_market_page_compromised_account_purchase_coin_page_receipt_coinname) - 1
       except ValueError:
-        print('❌ Transaction failed: Coins Not in Inventory!')
+        print('\n❌ Transaction failed: Coins Not in Inventory!')
         time.sleep(2)
         return black_market_page_compromised_accounts_drain_page()
       match black_market_page_compromised_account_purchase_coin_page_receipt_coinnconfirmation:
@@ -692,9 +696,9 @@ ID    │ ITEM/DESCRIPTION                  │ AVAILABLE BALANCE
                             user_wallet['balance'] += total
                             del bag_black_market['compromised_accounts'][black_market_page_compromised_account_purchase_coin_page_receipt_coinname_selected_choice]
                             print("\n\n")
-                            print("    ➡️ Executing decentralized transaction. Awaiting block confirmation...")
+                            print("➡️  Executing decentralized transaction. Awaiting block confirmation...")
                             time.sleep(2)
-                            print("    ✅ Transaction hash generated and validated. Escrow release initiated...")
+                            print("✅ Transaction hash generated and validated. Escrow release initiated...")
                             time.sleep(3)
                                     
 
@@ -716,16 +720,16 @@ ID    │ ITEM/DESCRIPTION                  │ AVAILABLE BALANCE
                             time.sleep(3)
                             return black_market_page_compromised_accounts()
                         else:
-                            print('❌ Transaction failed: Coins Not in Inventory!')
+                            print('\n❌ Transaction failed: Coins Not in Inventory!')
                             time.sleep(2)
                             return black_market_page_compromised_accounts_drain_page()
               case 'n':
-                    print('❌ Order Canceled!')
+                    print('\n❌ Order Canceled!')
                     time.sleep(2)
                     return black_market_page_compromised_accounts()
 
               case _:
-                    print('❌ Command Unavailable!')
+                    print('\n❌ Command Unavailable!')
                     time.sleep(2)
                     return black_market_page_compromised_accounts()
 
@@ -915,7 +919,7 @@ def coins_page_buy_command():
         total = coin_prices_low_range[0] * coin_to_be_purchased_quantity
         coin_name = "Voltflux"
     else:
-        print("❌ Invalid coin selection!")
+        print("\n❌ Invalid coin selection!")
         time.sleep(2)
         return coins_page()
 
@@ -932,9 +936,9 @@ def coins_page_buy_command():
             time.sleep(1)
             os.system('cls' if os.name=='nt' else 'clear')
             print("\n\n")
-            print("    ➡️  Processing digital asset order - pending network settlement confirmation...")
+            print("➡️  Processing digital asset order - pending network settlement confirmation...")
             time.sleep(1)
-            print("    ✅ Settlement reference issued in verified - custodial release in progress...")
+            print("✅ Settlement reference issued in verified - custodial release in progress...")
             time.sleep(1)
             print(f"""
 ╔══════════════════════════════════════════════════════════╗
@@ -958,17 +962,17 @@ def coins_page_buy_command():
             time.sleep(3)
             return coins_page()
         else:
-            print('❌ Transaction failed: Insufficient funds!')
+            print('\n❌ Transaction failed: Insufficient funds!')
             time.sleep(2)
             return coins_page_buy_command()
         
     elif coin_to_be_purchased_confirmation.lower() == 'n':
-        print('❌ Order Canceled!')
+        print('\n❌ Order Canceled!')
         time.sleep(2)
         return coins_page()
 
     else:
-        print('❌ Command Unavailable!')
+        print('\n❌ Command Unavailable!')
         time.sleep(2)
         return coins_page_buy_command()
 
@@ -1059,7 +1063,7 @@ def coins_page_sell_command():
         total = coin_sell_prices_low_range[0] * coin_to_be_purchased_quantity
         coin_name = "Voltflux"
     else:
-        print("❌ Invalid coin selection!")
+        print("\n❌ Invalid coin selection!")
         time.sleep(2)
         return coins_page()
 
@@ -1074,9 +1078,9 @@ def coins_page_sell_command():
             time.sleep(1)
             os.system('cls' if os.name=='nt' else 'clear')
             print("\n\n")
-            print("    ➡️  Initiating blockchain consensus protocol - awaiting validator signatures...")
+            print("➡️  Initiating blockchain consensus protocol - awaiting validator signatures...")
             time.sleep(1)
-            print("    ✅ Consensus achieved - smart contract execution and asset transfer authorized...")
+            print("✅ Consensus achieved - smart contract execution and asset transfer authorized...")
             time.sleep(1)
             print(f"""
     ╔══════════════════════════════════════════════════════════╗
@@ -1101,18 +1105,18 @@ def coins_page_sell_command():
             time.sleep(3)
             return coins_page()
         else:
-             print('❌ Transaction failed: Coins Not in Inventory!')
+             print('\n❌ Transaction failed: Coins Not in Inventory!')
 
              time.sleep(2)
              return coins_page()
 
     elif coin_to_be_purchased_confirmation.lower() == 'n':
-        print('❌ Order Canceled!')
+        print('\n❌ Order Canceled!')
         time.sleep(2)
         return coins_page()
 
     else:
-        print('❌ Command Unavailable!')
+        print('\n❌ Command Unavailable!')
         time.sleep(2)
         return coins_page()
 
@@ -1154,7 +1158,7 @@ def starting_message():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Loading market data...")
     spinner = '-\\|/'
-    for i in range(100):
+    for i in range(1):                                                             # CHANGE THIS BACK TO A HUNDRED
                 time.sleep(0.1)  
                 
                 
@@ -1185,7 +1189,7 @@ def main():
                         
 
 
-                user_dashboard_choice = input("""\n(v) 📊 View portfolio  |  (b) 🕳️  Black market   |   (m) 📈 View market  |  (r) 🪙 Purchase/sell coins  |  (e) 🚪 Exit                       
+                user_dashboard_choice = input("""\n(v) 📊 View portfolio  |  (b) 🕳️  Black market   |   (m) 📈 View market  |  (r) 🪙  Purchase/sell coins  |  (e) 🚪 Exit                       
 """).strip().lower()
                 if user_dashboard_choice == 'v':
                         os.system('cls' if os.name == 'nt' else 'clear')
