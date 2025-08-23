@@ -152,7 +152,7 @@ Enter Access Key to Proceed:
         black_market_page_compromised_accounts()
 
     elif section =='Exit Silk Claw':
-         return 'back'
+         return main()
         
     else:
         print("\n[ACCESS DENIED] Invalid key. Disconnecting...\n")
@@ -1158,7 +1158,7 @@ def starting_message():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Loading market data...")
     spinner = '-\\|/'
-    for i in range(1):                                                             # CHANGE THIS BACK TO A HUNDRED
+    for i in range(100):          
                 time.sleep(0.1)  
                 
                 
