@@ -152,7 +152,7 @@ Enter Access Key to Proceed:
         black_market_page_compromised_accounts()
 
     elif section =='Exit Silk Claw':
-         return main()
+         return 'back'
         
     else:
         print("\n[ACCESS DENIED] Invalid key. Disconnecting...\n")
@@ -1204,6 +1204,7 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
+
 
 
 
