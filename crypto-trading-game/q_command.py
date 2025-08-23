@@ -201,30 +201,30 @@ def black_market_page_crypto_coin():
             if len(black_market_page_crypto_coin_user_input.strip()) == 0:
                   return black_market_page_crypto_coin()
             elif black_market_page_crypto_coin_user_input == '1':
-                #  os.system('cls' if os.name == 'nt' else 'clear') 
-                #  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
-                #  time.sleep(1.5)
-                #  print("    🔐 Validating PGP keys and executing secure handshake...")
-                #  time.sleep(1.5)
-                #  print("    🔄 Synchronizing transaction logs and validating cipher chains...")
-                #  time.sleep(1.5)
-                #  os.system('cls' if os.name == 'nt' else 'clear') 
-                #  print("    🟢 Connection established. Market is online. Stay anonymous.")
-                #  time.sleep(2)
+                 os.system('cls' if os.name == 'nt' else 'clear') 
+                 print("    🔗 Initiating encrypted uplink to the terminal nexus...")
+                 time.sleep(1.5)
+                 print("    🔐 Validating PGP keys and executing secure handshake...")
+                 time.sleep(1.5)
+                 print("    🔄 Synchronizing transaction logs and validating cipher chains...")
+                 time.sleep(1.5)
+                 os.system('cls' if os.name == 'nt' else 'clear') 
+                 print("    🟢 Connection established. Market is online. Stay anonymous.")
+                 time.sleep(2)
                 
                  black_market_page_crypto_coin_purchase_coin_page()
 
             elif black_market_page_crypto_coin_user_input == '2':
-                #  os.system('cls' if os.name == 'nt' else 'clear') 
-                #  print("    🔗 Initiating encrypted uplink to the terminal nexus...")
-                #  time.sleep(1.5)
-                #  print("    🔐 Validating PGP keys and executing secure handshake...")
-                #  time.sleep(1.5)
-                #  print("    🔄 Synchronizing transaction logs and validating cipher chains...")
-                #  time.sleep(1.5)
-                #  os.system('cls' if os.name == 'nt' else 'clear') 
-                #  print("    🟢 Connection established. Market is online. Stay anonymous.")
-                #  time.sleep(2)
+                 os.system('cls' if os.name == 'nt' else 'clear') 
+                 print("    🔗 Initiating encrypted uplink to the terminal nexus...")
+                 time.sleep(1.5)
+                 print("    🔐 Validating PGP keys and executing secure handshake...")
+                 time.sleep(1.5)
+                 print("    🔄 Synchronizing transaction logs and validating cipher chains...")
+                 time.sleep(1.5)
+                 os.system('cls' if os.name == 'nt' else 'clear') 
+                 print("    🟢 Connection established. Market is online. Stay anonymous.")
+                 time.sleep(2)
                  black_market_page_crypto_coin_sell_coin_page()
             elif black_market_page_crypto_coin_user_input == '3':
                  return black_market_page()
@@ -1204,6 +1204,7 @@ def main():
                         break
                 else:
                         print('Command Unavailable')
+
 
 
 
