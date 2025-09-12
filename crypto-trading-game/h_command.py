@@ -4,11 +4,16 @@ def show_help():
     os.system('cls' if os.name == 'nt' else 'clear')
 
     help_info = """
-Welcome to Coin$hell
+Welcome to Coin$hell!
 
-As you might have observed, the tool is exculsively for the VSCode terminal to make 
-trading experience as straightforward as possible.  There's not much to learn—simply 
-click or type. Go on ahead and gambl— trade!
+This tool is made purely to be played on the VSCode terminal.
+Here you get to experience and learn the basics of crypto trading.
+Engage and explore the different features and act as a savy young adult
+taking on the world of trading. There's not much to learn—simply type
+the assigned the letter for each command.
+
+Go on ahead and gambl— trade!
+-@wopiary
 """
     print(help_info)
 
