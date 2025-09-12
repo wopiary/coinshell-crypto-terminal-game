@@ -6,7 +6,19 @@ import time
 
 def intro():
     os.system('cls' if os.name == 'nt' else 'clear')
-    intro_module.introanimate(delay=0.03)
+
+    frames = [
+        intro_module.A,
+        intro_module.B,
+        intro_module.C,
+        intro_module.D,
+        intro_module.E,
+        intro_module.F
+
+
+    ]
+    frames
+    intro_module.introanimate(frames, delay=0.02)
     
 def commands():
     while True:
@@ -24,7 +36,7 @@ def commands():
         if user_command == 'q':
             result = q_command.main()
         elif user_command == 'h':
-            result = h_command.show_help()   
+            result = h_command.show_help() 
         elif user_command == 'e':
             os.system('cls' if os.name=='nt' else 'clear')
             print("Exiting Coin$hell...")   
