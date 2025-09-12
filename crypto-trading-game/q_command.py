@@ -20,7 +20,6 @@ bag = {
 black_market_page_product_category = [
     "Crypto Exchange",
     "Compromised Coin$hell Accounts",
-    "Misc. Black Market Goods",
     "Exit Silk Claw"
 ]
 bag_black_market = {
@@ -91,17 +90,17 @@ def black_market_page():
     
     
 
-    print("    🌐 Initiating secure connection to darknet terminal...")
+    print("    🌐 Loading page modules...")
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear') 
-    print("    🔐 Authenticating user credentials...")
+    print("    🔐 Verifying session tokens...")
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("    👁️  Synchronizing with decentralized nodes...")
+    print("    👁️  Syncing interface layers...")
     time.sleep(1.5)
     os.system('cls' if os.name == 'nt' else 'clear')
 
-    print("    ⚡ Connection established. Welcome to the Market!")
+    print("    ⚡ Transition complete")
     time.sleep(2)
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -152,12 +151,12 @@ Enter Access Key to Proceed:
         black_market_page_compromised_accounts()
 
     elif section =='Exit Silk Claw':
-         return 'back'
+         return  'exit_to_main'
         
     else:
         print("\n[ACCESS DENIED] Invalid key. Disconnecting...\n")
         return black_market_page()
-        time.sleep(1.5)
+
 
 
 
@@ -778,19 +777,19 @@ def coins_page():
         ══════════════════════════════════════════════════════════════════════════════════
 ┌────────────────────────────┐     ┌────────────────────────────┐     ┌────────────────────────────┐
 │   1. {coin_names[0]}   │     │  2. {coin_names[1]}    │     │  3. {coin_names[2]}      │
-│                            │     |                            │     │                            │
+│                            │     │                            │     │                            │
 │      🏅 HIGH VALUE                        🥈 MID VALUE                       🥈 MID VALUE      
 │                            │     │                            │     │                            │
 └────────────────────────────┘     └────────────────────────────┘     └────────────────────────────┘
 ┌────────────────────────────┐     ┌────────────────────────────┐     ┌────────────────────────────┐
-│   4. {coin_names[3]}    │     │      5. {coin_names[4]}    │     |  6. {coin_names[5]}   │
-│                            │     |                            │     │                            │
+│   4. {coin_names[3]}    │     │      5. {coin_names[4]}    │     │  6. {coin_names[5]}   │
+│                            │     │                            │     │                            │
 │      🏅 HIGH VALUE                        🏅 HIGH VALUE                      🥉 LOW VALUE
 │                            │     │                            │     │                            │
 └────────────────────────────┘     └────────────────────────────┘     └────────────────────────────┘
 ┌────────────────────────────┐     ┌────────────────────────────┐     ┌────────────────────────────┐
-│     7. {coin_names[6]}    │     │    8. {coin_names[7]}    │     |   9. {coin_names[8]}      │
-│                            │     |                            │     │                            │
+│     7. {coin_names[6]}    │     │    8. {coin_names[7]}    │     │   9. {coin_names[8]}      │
+│                            │     │                            │     │                            │
 │      🥉 LOW VALUE                         🥈 MID VALUE                       🥈 MID VALUE        
 │                            │     │                            │     │                            │
 └────────────────────────────┘     └────────────────────────────┘     └────────────────────────────┘
@@ -809,16 +808,7 @@ def coins_page():
     coins_page_dashboard_choice = input(
 """[b] 🟢 Buy     [s] 🔴 Sell     [e] 🚪 Return to Home
 """) 
-    print("""
-┌─ INSTITUTIONAL SERVICES ───────────────────────────────────────────────────────┐
-│ 📞 Private Banking: 1-800-CSH-PRIME │ 🌐 Research Portal: csh.com/research    │
-│ 💬 Concierge: Available 24/7/365    │ 📧 Support: institutional@coinshell.com │
-└────────────────────────────────────────────────────────────────────────────────┘
 
-═══════════════════════════════════════════════════════════════════════════════════
-Coin$hell LLC | Member FINRA/SIPC | FDIC Insured | SOX Compliant
-© 2025 Coin$hell & Co. All rights reserved. | Regulatory: SEC/CFTC Licensed
-══════════════════════════════════════════════════════════════════════════════════""") 
 
     
     if coins_page_dashboard_choice == 'b':
@@ -874,7 +864,7 @@ def coins_page_buy_command():
 ╚════════════╩═══════════════════════════════════════════════════════════════╝
 \n💼 Portfolio Balance: ${user_wallet['balance']:.2f}       🎒 Inventory: {bag['coins_owned']}
 """)
-    coin_to_be_purchased_name = input('🪙  TARGET ASSET ID: ')
+    coin_to_be_purchased_name = input('🪙 TARGET ASSET ID: ')
     if len(coin_to_be_purchased_name.strip()) == 0:
          return coins_page_buy_command()
 
@@ -936,7 +926,7 @@ def coins_page_buy_command():
             time.sleep(1)
             os.system('cls' if os.name=='nt' else 'clear')
             print("\n\n")
-            print("➡️  Processing digital asset order - pending network settlement confirmation...")
+            print("➡️ Processing digital asset order - pending network settlement confirmation...")
             time.sleep(1)
             print("✅ Settlement reference issued in verified - custodial release in progress...")
             time.sleep(1)
@@ -953,8 +943,8 @@ def coins_page_buy_command():
 ║ ✅ STATUS        : CONFIRMED                             ║
 ╚══════════════════════════════════════════════════════════╝
 ┌─ INSTITUTIONAL SERVICES ───────────────────────────────────────────────────────┐
-│ 📞 Private Banking: 1-800-CSH-PRIME │ 🌐 Research Portal: csh.com/research    │
-│ 💬 Concierge: Available 24/7/365    │ 📧 Support: institutional@coinshell.com │
+│ 📞 Private Banking: 1-800-CSH-PRIME │ 🌐 Research Portal: csh.com/research     │
+│ 💬 Concierge: Available 24/7/365    │ 📧 Support: institutional@coinshell.com  │
 └────────────────────────────────────────────────────────────────────────────────┘
 
 💰 New Balance: ${user_wallet['balance']:.2f}
@@ -979,9 +969,10 @@ def coins_page_buy_command():
 
 
 
-
+total_selling_earnings = 0.0
 def coins_page_sell_command():
     os.system('cls' if os.name=='nt' else 'clear')
+    global total_selling_earnings
     _, sell_prices = generate_fresh_prices()
     coin_sell_prices_low_range = sell_prices['low']
     coin_sell_prices_mid_range = sell_prices['mid']
@@ -989,7 +980,7 @@ def coins_page_sell_command():
     coin_names = ['|🦌| ByteBucks(BYB)', '|🌙| LunaMint(LMT)', '|🦠| Vironix(VRX)', '|⛽| HexaFuel(HXF)', '|❌| OpalX(OPX)', '|🌱| TerraGreen(TGR)', '|💡| Lumina(LMN)', '|⚙️| GearCoin(GRC)', '|🪐| Cosmic(CSC)', '|⚡️| VoltFlux(VFX)']
     print(f"""
 ██████████████████████████████████████████████████████████████████████████████
-█ ░░░░░░░░░░░░░░░░░░░░░ OFFICIAL CRYPTO PURCHASE PORTAL ░░░░░░░░░░░░░░░░░░░░ █
+█ ░░░░░░░░░░░░░░░░░░░░░░░ OFFICIAL CRYPTO SELL PORTAL ░░░░░░░░░░░░░░░░░░░░░░ █
 ██████████████████████████████████████████████████████████████████████████████
 ╠════════════════════════════════════════════════════════════════════════════╣
 ║                         📈 LIVE MARKET BOARD                               ║
@@ -1018,7 +1009,7 @@ def coins_page_sell_command():
 ╚════════════╩═══════════════════════════════════════════════════════════════╝
 \n💼 Portfolio Balance: ${user_wallet['balance']:.2f}       🎒 Inventory: {bag['coins_owned']}
 """)
-    coin_to_be_purchased_name = input('🪙  TARGET ASSET ID: ')
+    coin_to_be_purchased_name = input('🪙 TARGET ASSET ID: ')
     if len(coin_to_be_purchased_name.strip()) == 0:
          return coins_page_sell_command()
 
@@ -1075,6 +1066,7 @@ def coins_page_sell_command():
                 del bag['coins_owned'][coin_name]
 
             user_wallet['balance'] += total
+            total_selling_earnings += total
             time.sleep(1)
             os.system('cls' if os.name=='nt' else 'clear')
             print("\n\n")
@@ -1095,8 +1087,8 @@ def coins_page_sell_command():
     ║ ✅ STATUS        : CONFIRMED                             ║
     ╚══════════════════════════════════════════════════════════╝
     ┌─ INSTITUTIONAL SERVICES ───────────────────────────────────────────────────────┐
-    │ 📞 Private Banking: 1-800-CSH-PRIME │ 🌐 Research Portal: csh.com/research    │
-    │ 💬 Concierge: Available 24/7/365    │ 📧 Support: institutional@coinshell.com │
+    │ 📞 Private Banking: 1-800-CSH-PRIME │ 🌐 Research Portal: csh.com/research     │
+    │ 💬 Concierge: Available 24/7/365    │ 📧 Support: institutional@coinshell.com  │
     └────────────────────────────────────────────────────────────────────────────────┘
 
     💰 New Balance: ${user_wallet['balance']:.2f}
@@ -1119,6 +1111,85 @@ def coins_page_sell_command():
         print('\n❌ Command Unavailable!')
         time.sleep(2)
         return coins_page()
+
+
+#PORTFOLIO PAGE
+def portfolio_page():
+    os.system('cls' if os.name=='nt' else 'clear')
+    global total_selling_earnings 
+    total_regular_value = 0
+
+    buy_prices, _ = generate_fresh_prices()
+    coin_prices_low_range = buy_prices['low']
+    coin_prices_mid_range = buy_prices['mid']
+    coin_prices_high_range = buy_prices['high']
+    
+    coin_value_map = {
+        'ByteBucks': coin_prices_high_range[0],
+        'LunaMint': coin_prices_mid_range[1],
+        'Vironix': coin_prices_mid_range[0],
+        'HexaFuel': coin_prices_high_range[1],
+        'OpalX': coin_prices_high_range[2],
+        'TerraGreem': coin_prices_low_range[1],
+        'Lumina': coin_prices_low_range[2],
+        'Gearcoin': coin_prices_mid_range[3],
+        'Cosmic': coin_prices_mid_range[2],
+        'Voltflux': coin_prices_low_range[0]
+    }
+    
+    if isinstance(bag['coins_owned'], dict):
+        for coin, quantity in bag['coins_owned'].items():
+            if coin in coin_value_map:
+                total_regular_value += coin_value_map[coin] * quantity
+    
+    print(f"""
+╔═══════════════════════════════════════════════════════════════════════════════════════════════╗
+║      📊 COIN$HELL PORTFOLIO ANALYTICS                                                         ║
+║      COMPREHENSIVE WEALTH DASHBOARD v3.2.1          🔒 AUTHENTICATED SESSION                  ║
+║      Real-time Asset Valuation & Risk Assessment    📈 Market Status: ACTIVE                  ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════╝
+    ═══════════════════════════════════════════════════════════════════════════════════════════
+           Coin$hell LLC | Member FINRA/SIPC | FDIC Insured | SOX Compliant
+       © 2025 Coin$hell & Co. All rights reserved. | Regulatory: SEC/CFTC Licensed
+    ═══════════════════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+│ 👤 ACCOUNT HOLDER: {Name:<20}                                                            
+│ 🆔 ACCOUNT TYPE: PREMIUM INSTITUTIONAL                                                     
+│ 📅 LAST LOGIN: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}                                                         
+└─────────────────────────────────────────────────────────────────────────────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                    💰 WEALTH SUMMARY                                          ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════╣
+║ 💳 LIQUID CASH BALANCE        │ ${user_wallet['balance']:>15,.2f}                                              ║
+║ 📈 CURRENT PORTFOLIO VALUE    │ ${total_regular_value:>15,.2f}                                              ║
+║ 🪙  COIN HOLDINGS              │  {bag['coins_owned']}                                                           
+╠═══════════════════════════════════════════════════════════════════════════════════════════════╣
+║ 🎯 TOTAL NET WORTH            │ ${user_wallet['balance'] + total_selling_earnings:>15,.2f}                                              ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════╝""")
+    print("""
+┌─ INSTITUTIONAL SERVICES ───────────────────────────────────────────────────────┐
+│ 📞 Private Banking: 1-800-CSH-PRIME │ 🌐 Research Portal: csh.com/research     │
+│ 💬 Concierge: Available 24/7/365    │ 📧 Support: institutional@coinshell.com  │
+└────────────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════════
+      Coin$hell LLC | Member FINRA/SIPC | FDIC Insured | SOX Compliant
+  © 2025 Coin$hell & Co. All rights reserved. | Regulatory: SEC/CFTC Licensed
+═══════════════════════════════════════════════════════════════════════════════════\n""") 
+
+  
+    portfolio_page_dashboard_choice = input(
+"""[e] 🚪 Return to Home
+""") 
+
+
+    
+    if portfolio_page_dashboard_choice == 'e':
+        return 'back'
+    else:
+         portfolio_page()
 
 
 
@@ -1158,7 +1229,7 @@ def starting_message():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Loading market data...")
     spinner = '-\\|/'
-    for i in range(100):          
+    for i in range(100):    
                 time.sleep(0.1)  
                 
                 
@@ -1192,16 +1263,18 @@ def main():
                 user_dashboard_choice = input("""\n(v) 📊 View portfolio  |  (b) 🕳️  Black market   |   (m) 📈 View market  |  (r) 🪙  Purchase/sell coins  |  (e) 🚪 Exit                       
 """).strip().lower()
                 if user_dashboard_choice == 'v':
-                        os.system('cls' if os.name == 'nt' else 'clear')
-                        print('portfolio logic')
+                        portfolio_page()
                 elif user_dashboard_choice == 'b':
-                        black_market_page()
+                        result = black_market_page()
+                        if result == 'exit_to_main':
+                             continue
                 elif user_dashboard_choice == 'm':
-                        print('market logic')
+                        print('MARKET FEATURE UNAVAILABLE!')
                 elif user_dashboard_choice == 'r':
                         coins_page()
                 elif user_dashboard_choice == 'e':
                         break
+                
                 else:
                         print('Command Unavailable')
 
