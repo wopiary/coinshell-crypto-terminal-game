@@ -66,7 +66,7 @@ F = """      /$$$$$$            /$$              /$$    /$$                 /$$ 
                                      \_  $$_/                             
                                        \__/"""
 frames = [A, B, C, D, E, F]
-def introanimate(frames, delay):
+def introanimate(frames, delay=0.02):
     try:
           for _ in range(1):
             for frame in frames:
@@ -77,4 +77,5 @@ def introanimate(frames, delay):
         os.system('cls' if os.name=='nt' else 'clear')
 
 introanimate(frames, delay=0.07)
+
 
