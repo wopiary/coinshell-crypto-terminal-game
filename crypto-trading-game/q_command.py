@@ -69,9 +69,15 @@ def users_name_info():
     global Name
     user_name = input("""       
                                                       What's your name, hotshot? """).strip().capitalize()
-    Name = user_name
-    return Name
-
+    if len(user_name) == 0:
+         Name = 'Coin$hell LLC Trader'
+         return Name
+    elif user_name == ' ':
+         Name = 'Coin$hell LLC Trader'
+         return Name
+    else:
+        Name = user_name
+        return Name
 
 
 
@@ -770,7 +776,7 @@ def coins_page():
     ║      🏛️  Coin$hell Trading                                                               ║
     ║      DIGITAL WEALTH MANAGEMENT SUITE                📈 Markets: OPEN                    ║
     ║      Institutional Trading Platform v12.4.1         🔒 Session: Encrypted               ║
-    ╚═════════════════════════════════════════════════════════════════════════════════════════╚
+    ╚═════════════════════════════════════════════════════════════════════════════════════════╝
         ══════════════════════════════════════════════════════════════════════════════════
                Coin$hell LLC | Member FINRA/SIPC | FDIC Insured | SOX Compliant
            © 2025 Coin$hell & Co. All rights reserved. | Regulatory: SEC/CFTC Licensed
@@ -801,7 +807,7 @@ def coins_page():
 └────────────────────────────┘  
 
 \n💼 Wallet Balance: ${user_wallet['balance']:.2f}     ||     🔒 Account Status: VERIFIED ✓
-📊 Market Cap: ${marketcap_projection:.2f}{orders_of_magnitude}     ||     ⚡ Current Market Trading Volume: ${tradingvol_projection:.2f}
+📊 Market Cap: ${marketcap_projection:.2f}{orders_of_magnitude}     ||     ⚡ Current Market Trading Volume: ${tradingvol_projection:.2f}M
 🎒 Inventory: {bag['coins_owned']}
 """) 
     
@@ -895,7 +901,7 @@ def coins_page_buy_command():
         coin_name = "OpalX"
     elif coin_to_be_purchased_name == '6':
         total = coin_prices_low_range[1] * coin_to_be_purchased_quantity
-        coin_name = "TerraGreem"
+        coin_name = "TerraGreen"
     elif coin_to_be_purchased_name == '7':
         total = coin_prices_low_range[2] * coin_to_be_purchased_quantity
         coin_name = "Lumina"
@@ -1040,7 +1046,7 @@ def coins_page_sell_command():
         coin_name = "OpalX"
     elif coin_to_be_purchased_name == '6':
         total = coin_sell_prices_low_range[1] * coin_to_be_purchased_quantity
-        coin_name = "TerraGreem"
+        coin_name = "TerraGreen"
     elif coin_to_be_purchased_name == '7':
         total = coin_sell_prices_low_range[2] * coin_to_be_purchased_quantity
         coin_name = "Lumina"
@@ -1130,7 +1136,7 @@ def portfolio_page():
         'Vironix': coin_prices_mid_range[0],
         'HexaFuel': coin_prices_high_range[1],
         'OpalX': coin_prices_high_range[2],
-        'TerraGreem': coin_prices_low_range[1],
+        'TerraGreen': coin_prices_low_range[1],
         'Lumina': coin_prices_low_range[2],
         'Gearcoin': coin_prices_mid_range[3],
         'Cosmic': coin_prices_mid_range[2],
